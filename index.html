@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沖繩五日四夜親子自駕行程（2025/8/10～8/14）</title>
-    <meta name="description" content="一份詳細的沖繩五日四夜親子自駕遊行程規劃，包含景點、住宿、預算等資訊。">
+    <meta name="description" content="一份詳細的沖繩五日四夜親子自駕遊行程規劃，包含景點、住宿、預算與Google地圖路線規劃。">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
             <details>
                 <summary>Day 2｜8/11 (一) 美麗海水族館與古宇利島探險</summary>
                 <div class="details-content">
-                    <div id="map-day2" class="map-placeholder" role="img" aria-label="第二天行程地圖"></div>
+                    <div id="map-day2" class="map-placeholder" role="img" aria-label="第二天行程地圖與路線"></div>
                     <ul>
                         <li>
                             <strong>美麗海水族館 (上午 9:00-12:00)：</strong><br>
@@ -84,7 +84,7 @@
             <details>
                 <summary>Day 3｜8/12 (二) DINO恐龍樂園與亞熱帶森林冒險</summary>
                 <div class="details-content">
-                    <div id="map-day3" class="map-placeholder" role="img" aria-label="第三天行程地圖"></div>
+                    <div id="map-day3" class="map-placeholder" role="img" aria-label="第三天行程地圖與路線"></div>
                     <ul>
                         <li>
                             <strong>DINO恐龍樂園 (上午 9:30-12:00)：</strong><br>
@@ -125,7 +125,7 @@
             <details>
                 <summary>Day 4｜8/13 (三) 叢林越野車與南下探訪玉泉洞</summary>
                 <div class="details-content">
-                    <div id="map-day4" class="map-placeholder" role="img" aria-label="第四天行程地圖"></div>
+                    <div id="map-day4" class="map-placeholder" role="img" aria-label="第四天行程地圖與路線"></div>
                     <ul>
                         <li>
                             <strong>名護越野車 (ATV) 體驗 (上午 9:00-11:30，需預約)：</strong><br>
@@ -164,7 +164,7 @@
             <details>
                 <summary>Day 5｜8/14 (四) 整理行囊，快樂返家</summary>
                 <div class="details-content">
-                    <div id="map-day5" class="map-placeholder" role="img" aria-label="第五天行程地圖"></div>
+                    <div id="map-day5" class="map-placeholder" role="img" aria-label="第五天行程地圖與路線"></div>
                     <ul>
                         <li><strong>上午：</strong>在飯店享用早餐後，整理行李並辦理退房。</li>
                         <li><strong>機場交通：</strong>根據航班時間，提前約2.5至3小時出發前往機場。先至租車公司還車，再由接駁車送至機場航廈。</li>
@@ -215,17 +215,83 @@
     </footer>
 
     <script>
-        function initMap() {
-            // 此處為地圖初始化的範例程式碼
-            // 您可以根據需求為每一天的地圖容器（如 'map-day2'）設定不同的中心點與標記
-            const okinawaCenter = { lat: 26.45, lng: 127.9 };
-            const mapOptions = { center: okinawaCenter, zoom: 9 };
+    /**
+     * Calculates and displays a route on a Google Map.
+     * @param {google.maps.DirectionsService} directionsService - The Directions Service instance.
+     * @param {google.maps.DirectionsRenderer} directionsRenderer - The Directions Renderer instance.
+     * @param {object} routeData - An object containing origin, destination, and waypoints.
+     */
+    function calculateAndDisplayRoute(directionsService, directionsRenderer, routeData) {
+        directionsService.route({
+            origin: routeData.origin,
+            destination: routeData.destination,
+            waypoints: routeData.waypoints,
+            optimizeWaypoints: true, // Let Google optimize the order of waypoints for the best route
+            travelMode: google.maps.TravelMode.DRIVING
+        })
+       .then((response) => {
+            directionsRenderer.setDirections(response);
+        })
+       .catch((e) => {
+            // Find the map container associated with the renderer to display the error
+            const mapContainer = directionsRenderer.getMap().getDiv();
+            mapContainer.innerHTML = "無法規劃路線： " + e.message;
+            console.error("Directions request failed due to " + e);
+        });
+    }
 
-            new google.maps.Map(document.getElementById('map-day2'), mapOptions);
-            new google.maps.Map(document.getElementById('map-day3'), mapOptions);
-            new google.maps.Map(document.getElementById('map-day4'), mapOptions);
-            new google.maps.Map(document.getElementById('map-day5'), mapOptions);
-        }
+    /**
+     * Main function to initialize all maps and trigger route calculation.
+     * This function is called by the Google Maps API script once it's loaded.
+     */
+    function initMap() {
+        const directionsService = new google.maps.DirectionsService();
+
+        // --- Day 2: Naha -> Aquarium -> Kouri Island -> Motobu ---
+        const mapDay2 = new google.maps.Map(document.getElementById('map-day2'), { zoom: 9, center: { lat: 26.5, lng: 127.9 } });
+        const rendererDay2 = new google.maps.DirectionsRenderer({ map: mapDay2 });
+        calculateAndDisplayRoute(directionsService, rendererDay2, {
+            origin: 'Loisir Hotel Naha', // Assuming start from Day 1 hotel in Naha
+            destination: 'Orion Motobu Resort & Spa, Motobu', // Destination hotel area
+            waypoints: [
+                { location: '沖縄美ら海水族館', stopover: true },
+                { location: '古宇利島', stopover: true }
+            ]
+        });
+
+        // --- Day 3: Motobu -> Dino Park -> Neo Park -> Motobu ---
+        const mapDay3 = new google.maps.Map(document.getElementById('map-day3'), { zoom: 11, center: { lat: 26.59, lng: 127.97 } });
+        const rendererDay3 = new google.maps.DirectionsRenderer({ map: mapDay3 });
+        calculateAndDisplayRoute(directionsService, rendererDay3, {
+            origin: 'Orion Motobu Resort & Spa, Motobu', // Start from previous night's hotel
+            destination: 'Orion Motobu Resort & Spa, Motobu', // Return to the same area
+            waypoints:
+        });
+
+        // --- Day 4: Motobu -> ATV -> Okinawa World -> Naha ---
+        const mapDay4 = new google.maps.Map(document.getElementById('map-day4'), { zoom: 9, center: { lat: 26.35, lng: 127.8 } });
+        const rendererDay4 = new google.maps.DirectionsRenderer({ map: mapDay4 });
+        calculateAndDisplayRoute(directionsService, rendererDay4, {
+            origin: 'Orion Motobu Resort & Spa, Motobu', // Start from the north
+            destination: '那覇市国際通り', // Destination is Kokusai Dori in Naha
+            waypoints: [
+                { location: 'Nago Offroad Park', stopover: true },
+                { location: 'おきなわワールド', stopover: true }
+            ]
+        });
+
+        // --- Day 5: Naha -> Airport ---
+        const mapDay5 = new google.maps.Map(document.getElementById('map-day5'), { zoom: 12, center: { lat: 26.2, lng: 127.66 } });
+        const rendererDay5 = new google.maps.DirectionsRenderer({ map: mapDay5 });
+        calculateAndDisplayRoute(directionsService, rendererDay5, {
+            origin: '那覇市国際通り', // From Naha city center
+            destination: '那覇空港', // To Naha Airport
+            waypoints: // No waypoints for the last day
+        });
+    }
+
+    // Make initMap globally available for the Google Maps callback
+    window.initMap = initMap;
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&callback=initMap"></script>
 
