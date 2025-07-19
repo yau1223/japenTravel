@@ -3,391 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沖繩五日四夜自駕親子行程規劃 (優化版)</title>
-    <style>
-        :root {
-            --primary-color: #00796b; /* 主題色 - 藍綠色 */
-            --light-primary-color: #e0f2f1; /* 淺主題色 */
-            --border-color: #b2dfdb;
-            --text-color: #333;
-            --heading-color: #263238;
-            --background-color: #f7f9f9;
-            --white: #ffffff;
-            --gray: #aaa;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-            line-height: 1.7;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            color: var(--heading-color);
-            border-bottom: 2px solid var(--light-primary-color);
-            padding-bottom: 0.5em;
-        }
-        
-        h1 {
-            margin-top: 0;
-        }
-
-        h2 {
-             margin-top: 2em;
-        }
-        
-        h3 {
-             color: var(--heading-color);
-             margin-top: 1.5em;
-        }
-
-        details {
-            margin-bottom: 1.5em;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            overflow: hidden; /* 確保圓角效果 */
-            background-color: var(--white);
-        }
-
-        summary {
-            font-size: 1.2em;
-            font-weight: bold;
-            background-color: var(--white);
-            padding: 12px 16px;
-            cursor: pointer;
-            position: relative;
-            transition: background-color 0.2s ease-in-out;
-            color: var(--primary-color);
-        }
-        
-        summary:hover {
-            background-color: var(--light-primary-color);
-        }
-
-        summary::marker {
-            display: none; /* 隱藏原生箭頭 */
-        }
-        
-        summary::-webkit-details-marker {
-            display: none;
-        }
-        
-        summary::after {
-            content: '▶';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%) rotate(0deg);
-            transition: transform 0.2s ease-in-out;
-            font-size: 0.8em;
-        }
-
-        details[open] > summary::after {
-            transform: translateY(-50%) rotate(90deg);
-        }
-        
-        .details-content {
-            padding: 0 20px 20px 20px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1.5em auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5em 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-        }
-
-        th {
-            background: var(--light-primary-color);
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* 響應式表格樣式 (RWD for Tables) */
-        @media (max-width: 600px) {
-            table thead {
-                display: none; /* 隱藏桌面版的表頭 */
-            }
-
-            table, table tbody, table tr, table td {
-                display: block;
-                width: 100%;
-            }
-
-            table tr {
-                margin-bottom: 1rem;
-                border: 1px solid var(--gray);
-                border-radius: 4px;
-            }
-
-            table td {
-                text-align: right; /* 讓內容靠右對齊 */
-                padding-left: 50%; /* 空出左半邊給標籤 */
-                position: relative;
-                border-bottom: 1px solid #eee;
-            }
-            
-            table td:last-child {
-                border-bottom: 0;
-            }
-
-            table td::before {
-                content: attr(data-label); /* 從 data-label 屬性抓取文字 */
-                position: absolute;
-                left: 10px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                text-align: left;
-                font-weight: bold;
-                color: var(--primary-color);
-            }
-        }
-    </style>
+    <title>沖繩五日四夜親子自駕行程（2025/8/10～8/14）</title>
+    <meta name="description" content="一份詳細的沖繩五日四夜親子自駕遊行程規劃，包含景點、住宿、預算等資訊。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">跳至主要內容</a>
 
-    <main class="container">
-        <h1>沖繩五日四夜自駕親子行程 (8/10～8/15)</h1>
-        <p>以下行程針對兩大兩小的家庭，整合了交通、住宿與遊玩建議。每天行程內容包含各景點的簡介、推薦造訪時段、預計停留時間與親子適合度評估，並提供景點地址與 Google 地圖連結。每日日程採用可收合的折疊區塊呈現，點擊「Day X」可展開查看詳細內容。每日亦附上當天預算概算，並於文末彙總全程總預算供參考。</p>
-        
-        <details open>
-            <summary>Day 1 - 抵達沖繩・漫遊那霸市區</summary>
-            <div class="details-content">
-                <p><i>抵達當天先在那霸市區輕鬆逛逛，適應沖繩氛圍。</i></p>
-                <p><strong>行程概覽：</strong>上午從台灣飛抵那霸機場，辦妥租車手續後開往市區飯店休息。下午前往【首里城公園】參觀琉球王國歷史，接著傍晚在【國際通】散步購物、品嚐沖繩美食。晚上入住那霸市區飯店，為隔天北上行程養精蓄銳。</p>
-                <div id="map-day1" style="height: 400px; width: 100%; border-radius: 8px; margin: 1em 0;"></div>
-                <p>
-                    <strong>首里城公園</strong> –
-                    <em>推薦時段：下午；停留：約1.5小時；親子適合度：★★★★☆</em>
-                    <br> 地址：沖繩縣那霸市首里金城町1-2 (<a href="https://goo.gl/maps/6YeZL6Loj4Rf1TjG8" target="_blank" rel="noopener noreferrer">Google地圖</a>)
-                    <br> 簡介：首里城是琉球王國的古都城址，也是沖繩的重要文化遺產。雖然主殿曾於2019年遭火災毀損，目前正在重建中，但城區周邊仍可參觀守禮門等歷史建築遺跡。園區高處可遠眺那霸市景，小朋友可以在廣場奔跑，親子共遊也能感受濃厚的歷史氛圍。
-                </p>
-                <p>
-                    <strong>國際通</strong> –
-                    <em>推薦時段：傍晚至夜間；停留：約2小時；親子適合度：★★★★☆</em>
-                    <br> 地址：沖繩縣那霸市牧志周邊 (<a href="https://goo.gl/maps/M6R6XVGh6RP8yaFp7" target="_blank" rel="noopener noreferrer">Google地圖</a>)
-                    <br> 簡介：國際通是那霸市最繁華的商店街，全長約1.6公里，兩旁林立各式餐廳、紀念品店與甜品店。傍晚時分來此可欣賞街頭藝人表演，品嚐道地的沖繩料理如 <span title="沖繩麵">沖繩麵</span>、<span title="苦瓜炒豆腐等沖繩家常菜">炒苦瓜</span>等。對小朋友而言，街上色彩繽紛的招牌和充滿南國風情的氛圍都非常新奇。
-                </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">費用項目</th>
-                            <th scope="col">日圓</th>
-                            <th scope="col">台幣</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="費用項目">住宿（那霸市區飯店）</td>
-                            <td data-label="日圓">12,000</td>
-                            <td data-label="台幣">2,400</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">交通（租車、油資等）</td>
-                            <td data-label="日圓">6,500</td>
-                            <td data-label="台幣">1,300</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">門票</td>
-                            <td data-label="日圓">0</td>
-                            <td data-label="台幣">0</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">餐食</td>
-                            <td data-label="日圓">5,000</td>
-                            <td data-label="台幣">1,000</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">其他</td>
-                            <td data-label="日圓">1,000</td>
-                            <td data-label="台幣">200</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目"><strong>當日小計</strong></td>
-                            <td data-label="日圓"><strong>24,500</strong></td>
-                            <td data-label="台幣"><strong>4,900</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </details>
+    <header class="main-header">
+        <div class="container">
+            <h1>沖繩五日四夜親子自駕行程規劃</h1>
+            <p class="subtitle">2025年8月10日 ～ 8月14日</p>
+        </div>
+    </header>
 
-        <details>
-            <summary>Day 2 - 中部海岸線自駕（美國村・萬座毛）</summary>
-            <div class="details-content">
-                 <p><i>驅車北上沖繩本島中部，飽覽西海岸迷人風光。</i></p>
-                 <p><strong>行程概覽：</strong>早上從那霸出發沿高速公路北上，途中在北谷町停留遊覽【美國村】，中午於美國村用餐。隨後繼續駕車前往恩納村，下午造訪著名的海岸風景【萬座毛】。傍晚可在度假飯店附近海灘戲水或休息。夜宿恩納或名護地區的度假飯店，享受飯店親子設施。</p>
-                 <div id="map-day2" style="height: 400px; width: 100%; border-radius: 8px; margin: 1em 0;"></div>
-                 <p>
-                    <strong>美國村</strong> –
-                    <em>推薦時段：上午；停留：約2小時；親子適合度：★★★★★</em>
-                    <br> 地址：沖繩縣中頭郡北谷町美浜 (<a href="https://goo.gl/maps/4LvsWdf8DL7DLg2T6" target="_blank" rel="noopener noreferrer">Google地圖</a>)
-                    <br> 簡介：美國村是一處融合美軍風情和娛樂購物的複合商區。園區內有繽紛的建築和地標摩天輪，小朋友對此充滿好奇。附近的 <span title="北谷海灘，緊鄰美國村">日落海灘</span> 沙灘乾淨平緩，如時間充裕可帶孩童戲水玩沙。
-                </p>
-                <p>
-                    <strong>萬座毛</strong> –
-                    <em>推薦時段：午後；停留：約1小時；親子適合度：★★★☆☆</em>
-                    <br> 地址：沖繩縣國頭郡恩納村恩納 (<a href="https://goo.gl/maps/7zgENgXZ8CkRQv2Q8" target="_blank" rel="noopener noreferrer">Google地圖</a>)
-                    <br> 簡介：萬座毛是沖繩西海岸著名的海岸懸崖景觀，其象鼻岩造型和壯麗的海天一線景色令人難忘。景區有平坦步道可推嬰兒車漫步，但懸崖邊沒有欄杆，小朋友需由大人陪同緊握避免靠近崖邊。
-                </p>
-                <table>
-                     <thead>
-                        <tr>
-                            <th scope="col">費用項目</th>
-                            <th scope="col">日圓</th>
-                            <th scope="col">台幣</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="費用項目">住宿（海濱度假飯店）</td>
-                            <td data-label="日圓">18,000</td>
-                            <td data-label="台幣">3,600</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">交通（租車、油資、過路費）</td>
-                            <td data-label="日圓">7,500</td>
-                            <td data-label="台幣">1,500</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">門票</td>
-                            <td data-label="日圓">0</td>
-                            <td data-label="台幣">0</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">餐食</td>
-                            <td data-label="日圓">10,000</td>
-                            <td data-label="台幣">2,000</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目">其他</td>
-                            <td data-label="日圓">2,000</td>
-                            <td data-label="台幣">400</td>
-                        </tr>
-                        <tr>
-                            <td data-label="費用項目"><strong>當日小計</strong></td>
-                            <td data-label="日圓"><strong>37,500</strong></td>
-                            <td data-label="台幣"><strong>7,500</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </details>
+    <main id="main-content" class="container">
         
-        <h2>行程總預算</h2>
-        <p>
-            以上每日預估花費僅供參考，實際支出將視個人選擇有所增減。以4人家庭計算，此五日四夜行程總預算約為
-            <strong>157,900日圓（約31,580台幣）</strong>。建議預留約5-10%的彈性預算以因應臨時增加的費用或購物開銷。
-        </p>
+        <section class="itinerary-day" id="day1">
+            <details open>
+                <summary>Day 1｜8/10 (日) 晚間抵達，輕鬆入住</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>抵達方式：</strong>晚班機抵達那霸機場 (OKA)，辦理出關後，前往租車公司取車或搭乘飯店接駁車。</li>
+                        <li>
+                            <strong>住宿建議 (不安排行程)：</strong>
+                            <ul>
+                                <li><strong>Loisir Hotel Naha：</strong>舒適的溫泉飯店，距離機場約15分鐘車程，適合帶小孩的家庭快速休息。<br>地址：沖繩縣那霸市西3-2-1｜<a href="https://goo.gl/maps/4usRNsS6w6oPUMst8" target="_blank" rel="noopener noreferrer">Google 地圖</a></li>
+                                <li><strong>Vessel Hotel Campana Okinawa：</strong>位於北谷美國村旁，親子友善設施完善，並擁有海景溫泉。<br>地址：沖繩縣中頭郡北谷町美浜9-22｜<a href="https://goo.gl/maps/gFwbq8E7dSsbWjvL7" target="_blank" rel="noopener noreferrer">Google 地圖</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>住宿預算：</strong>約 ¥15,000～¥25,000 / 晚 (約 NT$3,000～NT$5,000)，依房型而定。</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section class="itinerary-day" id="day2">
+            <details>
+                <summary>Day 2｜8/11 (一) 美麗海水族館與古宇利島探險</summary>
+                <div class="details-content">
+                    <div id="map-day2" class="map-placeholder" role="img" aria-label="第二天行程地圖"></div>
+                    <ul>
+                        <li>
+                            <strong>美麗海水族館 (上午 9:00-12:00)：</strong><br>
+                            世界級的海洋生態館，觀賞「黑潮之海」巨大水槽中的鯨鯊。小朋友可以體驗觸摸池與精彩的海豚秀。
+                            <br>地址：沖繩縣本部町石川424｜<a href="https://goo.gl/maps/7YdbeFfBGr3YzBqFA" target="_blank" rel="noopener noreferrer">Google 地圖</a>
+                        </li>
+                        <li><strong>午餐建議：</strong>本部町在地食堂，如「岸本食堂」品嚐道地沖繩麵。<br>(<a href="https://goo.gl/maps/tHWdPeu47W6TeXD59" target="_blank" rel="noopener noreferrer">Google 地圖</a>)</li>
+                        <li>
+                            <strong>古宇利島 (下午 13:30-16:00)：</strong><br>
+                            駕車穿越古宇利大橋欣賞壯麗海景，在沙灘戲水、與心型岩合照，並登上海洋塔遠眺。
+                            <br>地址：沖繩縣國頭郡今歸仁村古宇利538｜<a href="https://goo.gl/maps/2qjVJUekPHD2" target="_blank" rel="noopener noreferrer">Google 地圖</a>
+                        </li>
+                        <li><strong>住宿建議：</strong>入住名護或本部地區的海景度假飯店，如 Orion Motobu Resort & Spa 或 Hilton Okinawa Sesoko Resort。</li>
+                    </ul>
+                    <div class="budget-table">
+                        <h4>本日預算估算</h4>
+                        <table>
+                            <thead>
+                                <tr><th>費用項目</th><th>日圓 (JPY)</th><th>台幣 (TWD)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>住宿 (名護/本部)</td><td>¥22,000</td><td>NT$4,400</td></tr>
+                                <tr><td>交通 (租車/油資/過路費)</td><td>¥8,000</td><td>NT$1,600</td></tr>
+                                <tr><td>門票 (水族館+海洋塔)</td><td>¥7,000</td><td>NT$1,400</td></tr>
+                                <tr><td>餐食</td><td>¥7,000</td><td>NT$1,400</td></tr>
+                                <tr><td>其他雜支</td><td>¥2,000</td><td>NT$400</td></tr>
+                                <tr class="total"><td><strong>當日小計</strong></td><td><strong>¥46,000</strong></td><td><strong>NT$9,200</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="itinerary-day" id="day3">
+            <details>
+                <summary>Day 3｜8/12 (二) DINO恐龍樂園與亞熱帶森林冒險</summary>
+                <div class="details-content">
+                    <div id="map-day3" class="map-placeholder" role="img" aria-label="第三天行程地圖"></div>
+                    <ul>
+                        <li>
+                            <strong>DINO恐龍樂園 (上午 9:30-12:00)：</strong><br>
+                            在山原亞熱帶森林中漫步，與栩栩如生的大型動態恐龍模型近距離接觸，是親子同樂的最佳景點。
+                            <br>地址：沖繩縣名護市中山1024-1｜<a href="https://goo.gl/maps/72H6Mg7JzXcNLRuw9" target="_blank" rel="noopener noreferrer">Google 地圖</a>
+                        </li>
+                        <li><strong>午餐建議：</strong>御果子御殿名護店或附近在地食堂。</li>
+                        <li>
+                            <strong>午後活動建議：</strong>
+                            <ul>
+                                <li><strong>Neo Park Okinawa：</strong>名護動植物公園，可近距離餵食火烈鳥與水豚等可愛動物。<br>(<a href="https://goo.gl/maps/pbVvpr4zL8YDeRxS6" target="_blank" rel="noopener noreferrer">Google 地圖</a>)</li>
+                                <li>在名護市區或鄰近海灘悠閒度過。</li>
+                            </ul>
+                        </li>
+                        <li><strong>住宿建議：</strong>繼續留宿名護或本部地區，節省交通時間。</li>
+                    </ul>
+                    <div class="budget-table">
+                        <h4>本日預算估算</h4>
+                        <table>
+                            <thead>
+                                <tr><th>費用項目</th><th>日圓 (JPY)</th><th>台幣 (TWD)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>住宿 (名護/本部)</td><td>¥22,000</td><td>NT$4,400</td></tr>
+                                <tr><td>交通 (租車/油資)</td><td>¥5,500</td><td>NT$1,100</td></tr>
+                                <tr><td>門票 (恐龍樂園+動物園)</td><td>¥8,400</td><td>NT$1,680</td></tr>
+                                <tr><td>餐食</td><td>¥7,000</td><td>NT$1,400</td></tr>
+                                <tr><td>其他雜支</td><td>¥2,000</td><td>NT$400</td></tr>
+                                <tr class="total"><td><strong>當日小計</strong></td><td><strong>¥44,900</strong></td><td><strong>NT$8,980</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="itinerary-day" id="day4">
+            <details>
+                <summary>Day 4｜8/13 (三) 叢林越野車與南下探訪玉泉洞</summary>
+                <div class="details-content">
+                    <div id="map-day4" class="map-placeholder" role="img" aria-label="第四天行程地圖"></div>
+                    <ul>
+                        <li>
+                            <strong>名護越野車 (ATV) 體驗 (上午 9:00-11:30，需預約)：</strong><br>
+                            體驗在亞熱帶叢林中駕駛越野車的樂趣，有專業教練指導，部分場地提供親子共乘方案。
+                            <br>地址：依預約場地而定，如 Nago Offroad Park (<a href="https://goo.gl/maps/CuBCAXzz2m8iw37P7" target="_blank" rel="noopener noreferrer">Google 地圖</a>)
+                        </li>
+                        <li><strong>午餐建議：</strong>於名護市區用餐後南下。</li>
+                        <li>
+                            <strong>玉泉洞 (沖繩世界文化王國) (下午 14:00-16:30)：</strong><br>
+                            探索日本第二大的鐘乳石洞，洞內氣溫涼爽，是夏季的絕佳去處。園區內還有傳統太鼓表演與文化體驗活動。
+                            <br>地址：沖繩縣南城市玉城前川1336｜<a href="https://goo.gl/maps/ULRz9u3Kh2GZnGXs8" target="_blank" rel="noopener noreferrer">Google 地圖</a>
+                        </li>
+                        <li><strong>住宿建議：</strong>返回那霸市區入住，方便隔日前往機場。</li>
+                    </ul>
+                    <div class="budget-table">
+                        <h4>本日預算估算</h4>
+                        <table>
+                            <thead>
+                                <tr><th>費用項目</th><th>日圓 (JPY)</th><th>台幣 (TWD)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>住宿 (那霸市區)</td><td>¥15,000</td><td>NT$3,000</td></tr>
+                                <tr><td>交通 (租車/油資/過路費)</td><td>¥9,500</td><td>NT$1,900</td></tr>
+                                <tr><td>門票 (ATV+玉泉洞)</td><td>¥17,000</td><td>NT$3,400</td></tr>
+                                <tr><td>餐食</td><td>¥7,000</td><td>NT$1,400</td></tr>
+                                <tr><td>其他雜支</td><td>¥2,000</td><td>NT$400</td></tr>
+                                <tr class="total"><td><strong>當日小計</strong></td><td><strong>¥50,500</strong></td><td><strong>NT$10,100</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="itinerary-day" id="day5">
+            <details>
+                <summary>Day 5｜8/14 (四) 整理行囊，快樂返家</summary>
+                <div class="details-content">
+                    <div id="map-day5" class="map-placeholder" role="img" aria-label="第五天行程地圖"></div>
+                    <ul>
+                        <li><strong>上午：</strong>在飯店享用早餐後，整理行李並辦理退房。</li>
+                        <li><strong>機場交通：</strong>根據航班時間，提前約2.5至3小時出發前往機場。先至租車公司還車，再由接駁車送至機場航廈。</li>
+                        <li><strong>機場活動：</strong>辦理登機手續與行李托運後，可在機場免稅店進行最後的購物，或在餐廳簡單用餐。</li>
+                    </ul>
+                    <div class="budget-table">
+                        <h4>本日預算估算</h4>
+                        <table>
+                            <thead>
+                                <tr><th>費用項目</th><th>日圓 (JPY)</th><th>台幣 (TWD)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>交通 (還車前加油/過路費)</td><td>¥3,000</td><td>NT$600</td></tr>
+                                <tr><td>餐食</td><td>¥4,000</td><td>NT$800</td></tr>
+                                <tr><td>其他雜支 (伴手禮)</td><td>¥2,000</td><td>NT$400</td></tr>
+                                <tr class="total"><td><strong>當日小計</strong></td><td><strong>¥9,000</strong></td><td><strong>NT$1,800</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </details>
+        </section>
+
     </main>
 
+    <footer class="main-footer">
+        <div class="container">
+            <section class="total-budget">
+                <h2>總預算彙整 (預估值，不含機票)</h2>
+                <div class="budget-table">
+                    <table>
+                        <thead>
+                            <tr><th>費用類別</th><th>日圓 (JPY)</th><th>台幣 (TWD)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>住宿 (4晚)</td><td>¥74,000</td><td>NT$14,800</td></tr>
+                            <tr><td>交通 (5天)</td><td>¥26,000</td><td>NT$5,200</td></tr>
+                            <tr><td>門票/體驗</td><td>¥32,400</td><td>NT$6,480</td></tr>
+                            <tr><td>餐食</td><td>¥32,000</td><td>NT$6,400</td></tr>
+                            <tr><td>其他雜支</td><td>¥8,000</td><td>NT$1,600</td></tr>
+                            <tr class="total"><td><strong>總計 (4人)</strong></td><td><strong>¥172,400</strong></td><td><strong>NT$34,480</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="note">*以上為四人家庭估算，實際費用可能因消費習慣、住宿等級與季節性價格浮動而異。機票費用另計 (旺季四人來回約 NT$40,000～60,000)。</p>
+            </section>
+        </div>
+    </footer>
+
     <script>
-        // --- Google Maps API Refactored Script ---
-
-        /**
-         * 建立並初始化 Google 地圖與路線
-         * @param {object} mapConfig - 地圖設定物件
-         * @param {string} mapConfig.mapId - 地圖容器的 HTML ID
-         * @param {object} mapConfig.center - 地圖中心點 {lat, lng}
-         * @param {number} mapConfig.zoom - 地圖縮放等級
-         * @param {object} mapConfig.origin - 路線起點 {lat, lng}
-         * @param {object} mapConfig.destination - 路線終點 {lat, lng}
-         * @param {Array<object>} mapConfig.waypoints - 路線中途點陣列 [{location: {lat, lng}}]
-         */
-        function createMap(mapConfig) {
-            const mapElement = document.getElementById(mapConfig.mapId);
-            if (!mapElement) {
-                console.error(`Map container #${mapConfig.mapId} not found.`);
-                return;
-            }
-
-            const map = new google.maps.Map(mapElement, {
-                center: mapConfig.center,
-                zoom: mapConfig.zoom,
-                mapId: `OKINAWA_TRIP_${mapConfig.mapId}` // Optional: For Cloud-based map styling
-            });
-
-            const directionsService = new google.maps.DirectionsService();
-            const directionsRenderer = new google.maps.DirectionsRenderer();
-            directionsRenderer.setMap(map);
-
-            directionsService.route({
-                origin: mapConfig.origin,
-                destination: mapConfig.destination,
-                waypoints: mapConfig.waypoints,
-                travelMode: google.maps.TravelMode.DRIVING
-            }, function(response, status) {
-                if (status === 'OK') {
-                    directionsRenderer.setDirections(response);
-                } else {
-                    console.error('Directions request failed due to ' + status);
-                    mapElement.innerHTML = `<p style="text-align:center; padding-top: 50px;">地圖路線載入失敗 (${status})</p>`;
-                }
-            });
-        }
-        
-        /**
-         * 主初始化函式，由 Google Maps API 回呼
-         */
         function initMap() {
-            // 將所有地圖的資料集中管理
-            const mapData = [
-                {
-                    mapId: 'map-day1',
-                    center: { lat: 26.21, lng: 127.68 }, zoom: 11,
-                    origin: { lat: 26.1967, lng: 127.6489 }, // 那霸機場
-                    destination: { lat: 26.2123, lng: 127.6791 }, // 國際通
-                    waypoints: [{ location: { lat: 26.2181, lng: 127.7169 } }] // 首里城
-                },
-                {
-                    mapId: 'map-day2',
-                    center: { lat: 26.4, lng: 127.78 }, zoom: 10,
-                    origin: { lat: 26.2123, lng: 127.6791 }, // 那霸市區
-                    destination: { lat: 26.5050, lng: 127.8503 }, // 萬座毛
-                    waypoints: [{ location: { lat: 26.3159, lng: 127.7577 } }] // 美國村
-                },
-                // ... 將 Day 3, 4, 5 的資料加入此處 ...
-                // 範例：
-                // {
-                //     mapId: 'map-day3',
-                //     center: { lat: 26.60, lng: 127.85 }, zoom: 10,
-                //     origin: { lat: 26.5050, lng: 127.8503 }, // 恩納村
-                //     destination: { lat: 26.6944, lng: 127.8779 }, // 美麗海水族館
-                //     waypoints: [] 
-                // }
-            ];
+            // 此處為地圖初始化的範例程式碼
+            // 您可以根據需求為每一天的地圖容器（如 'map-day2'）設定不同的中心點與標記
+            const okinawaCenter = { lat: 26.45, lng: 127.9 };
+            const mapOptions = { center: okinawaCenter, zoom: 9 };
 
-            // 遍歷資料並建立所有地圖
-            mapData.forEach(createMap);
+            new google.maps.Map(document.getElementById('map-day2'), mapOptions);
+            new google.maps.Map(document.getElementById('map-day3'), mapOptions);
+            new google.maps.Map(document.getElementById('map-day4'), mapOptions);
+            new google.maps.Map(document.getElementById('map-day5'), mapOptions);
         }
-
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&callback=initMap&libraries=geometry,drawing"
-            async defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&callback=initMap"></script>
+
 </body>
 </html>
