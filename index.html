@@ -23,8 +23,14 @@
         }
 
         /* --- UI/UX Principle: Consistency & Mobile-First RWD --- */
-        *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-family);
             line-height: 1.7;
@@ -33,23 +39,34 @@
             margin: 0;
             font-size: 16px;
         }
-       .container {
+
+        .container {
             max-width: 960px;
             margin: 0 auto;
             padding: 1rem;
         }
-        
+
         /* --- UI/UX Principle: Semantic Structure & Clear Information Architecture --- */
-       .main-header {
+        .main-header {
             text-align: center;
             padding: 3rem 1rem;
             background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url(https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1740&auto=format&fit=crop) center/cover no-repeat;
             color: white;
         }
-       .main-header h1 { font-size: 2.5rem; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); }
-       .main-header p { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; }
 
-       .main-nav {
+            .main-header h1 {
+                font-size: 2.5rem;
+                margin: 0;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            }
+
+            .main-header p {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                margin-top: 0.5rem;
+            }
+
+        .main-nav {
             background-color: #fff;
             padding: 0.8rem;
             text-align: center;
@@ -63,8 +80,17 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-       .main-nav a { text-decoration: none; color: var(--primary-color); font-weight: 700; transition: color 0.2s; }
-       .main-nav a:hover { color: var(--accent-color); }
+
+            .main-nav a {
+                text-decoration: none;
+                color: var(--primary-color);
+                font-weight: 700;
+                transition: color 0.2s;
+            }
+
+                .main-nav a:hover {
+                    color: var(--accent-color);
+                }
 
         main > article, main > section {
             background-color: #fff;
@@ -74,22 +100,52 @@
             box-shadow: var(--shadow-md);
         }
 
-        h2 { font-size: 2rem; color: var(--primary-color); border-bottom: 3px solid var(--accent-color); padding-bottom: 0.5rem; margin-top: 0; }
-        h3 { font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; }
-        h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        
-        ul { list-style-type: none; padding-left: 0; }
-        ul li {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23005A9C" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
-            padding-left: 32px;
-            margin-bottom: 12px;
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23005A9C" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+                padding-left: 32px;
+                margin-bottom: 12px;
+            }
+
+        .place-name {
+            font-weight: 700;
+        }
+
+        .place-name-jp {
+            font-size: 0.9em;
+            color: var(--text-color-light);
+            margin-left: 8px;
         }
 
         /* --- UI/UX Principle: Clear Call-to-Action (CTA) --- */
-       .cta-button {
+        .cta-button {
             display: inline-block;
             background-color: var(--accent-color);
-            color: white!important;
+            color: white !important;
             padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
@@ -99,9 +155,13 @@
             border: none;
             cursor: pointer;
         }
-       .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
 
-       .map-container {
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+
+        .map-container {
             width: 100%;
             height: 450px;
             margin-top: 1.5rem;
@@ -110,28 +170,67 @@
             border: 1px solid var(--border-color);
         }
 
-       .expert-tip {
+        .expert-tip {
             background-color: #FFFBEA;
             border-left: 5px solid #FDBF2D;
             padding: 1rem 1.5rem;
             margin: 1.5rem 0;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
-       .expert-tip strong { color: #B45309; }
 
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
-        th { background-color: var(--primary-color); color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+            .expert-tip strong {
+                color: #B45309;
+            }
 
-        footer { text-align: center; padding: 2rem; margin-top: 2rem; background-color: var(--primary-color); color: white; }
-        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
         @media (max-width: 768px) {
-            body { font-size: 15px; }
-           .main-header h1 { font-size: 2rem; }
-            h2 { font-size: 1.6rem; }
-            main > article, main > section { padding: 1.5rem; }
-           .map-container { height: 350px; }
+            body {
+                font-size: 15px;
+            }
+
+            .main-header h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            main > article, main > section {
+                padding: 1.5rem;
+            }
+
+            .map-container {
+                height: 350px;
+            }
         }
     </style>
 </head>
@@ -173,11 +272,11 @@
                     <p>晚班機抵達後不安排緊湊行程，以最快速度入住鄰近機場的溫泉飯店，為旅程揭開完美序幕。</p>
                     <h4>行程規劃</h4>
                     <ul>
-                        <li><strong>晚間</strong>: 抵達那霸機場 (OKA)，辦理入境手續後，前往租車櫃檯取車。</li>
-                        <li><strong>住宿</strong>: 驅車前往「琉球溫泉瀨長島飯店」，車程僅約15分鐘 [6, 7]。</li>
-                        <li><strong>晚餐與休憩</strong>: 於飯店或步行至旁邊的「瀨長島Umikaji Terrace」用餐 [8, 9]。餐後享受飯店著名的「龍神之湯」天然溫泉，洗去旅途疲憊 [7, 8]。</li>
+                        <li><span class="place-name">晚間</span>: 抵達那霸機場 (Naha Airport / 那覇空港)，辦理入境手續後，前往租車櫃檯取車。</li>
+                        <li><span class="place-name">住宿</span>: 驅車前往「琉球溫泉瀨長島飯店」，車程僅約15分鐘 [6, 7]。</li>
+                        <li><span class="place-name">晚餐與休憩</span>: 於飯店或步行至旁邊的「瀨長島Umikaji Terrace」用餐 [8, 9]。餐後享受飯店著名的「龍神之湯」天然溫泉，洗去旅途疲憊 [7, 8]。</li>
                     </ul>
-                    <h4>住宿推薦：琉球溫泉瀨長島飯店</h4>
+                    <h4>住宿推薦：琉球溫泉瀨長島飯店 <span class="place-name-jp">琉球温泉 瀬長島ホテル</span></h4>
                     <p>這間飯店是您南部行程的理想基地，其機場景觀房可讓孩子們觀賞飛機起降，增添獨特樂趣 [7]。</p>
                     <a href="https://www.resorts.co.jp/senaga/en" target="_blank" rel="noopener noreferrer" class="cta-button">查看飯店官網</a>
                 </section>
@@ -191,18 +290,18 @@
                     <div id="map-day2" class="map-container" role="img" aria-label="第二天行程地圖與路線"></div>
                     <h4>行程規劃</h4>
                     <ul>
-                        <li><strong>上午</strong>: 於瀨長島飯店退房，沿高速公路北上至本部町 (車程約1.5-2小時)。</li>
-                        <li><strong>住宿</strong>: 抵達「Orion 本部度假SPA飯店」，辦理入住或寄放行李。其位置優越，步行即可達水族館 [10, 11]。</li>
-                        <li><strong>下午</strong>: 參觀「沖繩美麗海水族館」，探索神秘的海洋世界。</li>
-                        <li><strong>傍晚</strong>: 驅車跨越古宇利大橋，前往「古宇利海洋塔」欣賞日落時分的絕景 [12, 13]。</li>
-                        <li><strong>晚餐</strong>: 可在古宇利島品嚐特色「蝦蝦飯」[14]，或返回飯店周邊用餐。</li>
+                        <li><span class="place-name">上午</span>: 於瀨長島飯店退房，沿高速公路北上至本部町 (車程約1.5-2小時)。</li>
+                        <li><span class="place-name">住宿</span>: 抵達「Orion 本部度假SPA飯店」，辦理入住或寄放行李。其位置優越，步行即可達水族館 [10, 11]。</li>
+                        <li><span class="place-name">下午</span>: 參觀「沖繩美麗海水族館」，探索神秘的海洋世界。</li>
+                        <li><span class="place-name">傍晚</span>: 驅車跨越古宇利大橋，前往「古宇利海洋塔」欣賞日落時分的絕景 [12, 13]。</li>
+                        <li><span class="place-name">晚餐</span>: 可在古宇利島品嚐特色「蝦蝦飯」[14]，或返回飯店周邊用餐。</li>
                     </ul>
                     <div class="expert-tip">
                         <strong>專家提示：</strong>建議在北上途中，於高速公路的「許田休息站」(道の駅 許田) 購買美麗海水族館的優惠門票，既順路又省錢 [15]。
                     </div>
                     <h4>景點資訊</h4>
-                    <p><strong>沖繩美麗海水族館:</strong> Map Code: 553 075 797*74</p>
-                    <p><strong>古宇利海洋塔:</strong> Map Code: 485 661 831*22</p>
+                    <p><span class="place-name">沖繩美麗海水族館</span> <span class="place-name-jp">沖縄美ら海水族館</span>: Map Code: 553 075 797*74</p>
+                    <p><span class="place-name">古宇利海洋塔</span> <span class="place-name-jp">古宇利オーシャンタワー</span>: Map Code: 485 661 831*22</p>
                     <a href="https://churaumi.okinawa/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">水族館官網</a>
                     <a href="https://www.kouri-oceantower.com/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">海洋塔官網</a>
                 </section>
@@ -216,14 +315,14 @@
                     <div id="map-day3" class="map-container" role="img" aria-label="第三天行程地圖與路線"></div>
                     <h4>行程規劃</h4>
                     <ul>
-                        <li><strong>上午</strong>: 前往「DINO恐龍PARK 山原亞熱帶之森」，與栩栩如生的恐龍們近距離接觸 [16]。</li>
-                        <li><strong>午餐</strong>: 體驗沖繩限定的「A&W漢堡」或當地特色餐廳 [14, 17]。</li>
-                        <li><strong>下午</strong>: 參加「名護 ATV 越野車體驗」，在專業指導下穿越叢林小徑 (9歲和11歲兒童可與大人共乘) [18, 19]。</li>
-                        <li><strong>傍晚</strong>: 返回飯店，享受泳池或溫泉設施，放鬆身心。</li>
+                        <li><span class="place-name">上午</span>: 前往「DINO恐龍PARK 山原亞熱帶之森」，與栩栩如生的恐龍們近距離接觸 [16]。</li>
+                        <li><span class="place-name">午餐</span>: 體驗沖繩限定的「A&W漢堡」或當地特色餐廳 [14, 17]。</li>
+                        <li><span class="place-name">下午</span>: 參加「名護 ATV 越野車體驗」，在專業指導下穿越叢林小徑 (9歲和11歲兒童可與大人共乘) [18, 19]。</li>
+                        <li><span class="place-name">傍晚</span>: 返回飯店，享受泳池或溫泉設施，放鬆身心。</li>
                     </ul>
                     <h4>景點資訊</h4>
-                    <p><strong>DINO恐龍PARK:</strong> Map Code: 206 716 550*63</p>
-                    <p><strong>名護 ATV 體驗:</strong> 依預約憑證為準</p>
+                    <p><span class="place-name">DINO恐龍PARK</span> <span class="place-name-jp">DINO恐竜PARK やんばる亜熱帯の森</span>: Map Code: 206 716 550*63</p>
+                    <p><span class="place-name">名護 ATV 體驗</span>: 依預約憑證為準</p>
                     <a href="https://www.okashigoten.co.jp/dino-park/" target="_blank" rel="noopener noreferrer" class="cta-button">恐龍公園官網</a>
                     <a href="https://www.klook.com/zh-TW/activity/146903-okinawa-atv-adventure-no-license-needed-fun-for-ages-4/" target="_blank" rel="noopener noreferrer" class="cta-button">Klook 預約 ATV</a>
                 </section>
@@ -237,13 +336,13 @@
                     <div id="map-day4" class="map-container" role="img" aria-label="第四天行程地圖與路線"></div>
                     <h4>行程規劃</h4>
                     <ul>
-                        <li><strong>上午</strong>: 於 Orion 飯店退房，驅車南下至南城市 (車程約1.5-2小時)。</li>
-                        <li><strong>中午至下午</strong>: 參觀「沖繩世界文化王國・玉泉洞」，探索鐘乳石洞、王國村並觀賞Eisa太鼓舞表演 [20, 21]。</li>
-                        <li><strong>傍晚</strong>: 驅車返回「琉球溫泉瀨長島飯店」辦理入住。</li>
-                        <li><strong>晚餐</strong>: 於瀨長島 Umikaji Terrace 享用晚餐，欣賞夜景。</li>
+                        <li><span class="place-name">上午</span>: 於 Orion 飯店退房，驅車南下至南城市 (車程約1.5-2小時)。</li>
+                        <li><span class="place-name">中午至下午</span>: 參觀「沖繩世界文化王國・玉泉洞」，探索鐘乳石洞、王國村並觀賞Eisa太鼓舞表演 [20, 21]。</li>
+                        <li><span class="place-name">傍晚</span>: 驅車返回「琉球溫泉瀨長島飯店」辦理入住。</li>
+                        <li><span class="place-name">晚餐</span>: 於瀨長島 Umikaji Terrace 享用晚餐，欣賞夜景。</li>
                     </ul>
                     <h4>景點資訊</h4>
-                    <p><strong>沖繩世界文化王國・玉泉洞:</strong> Map Code: 232 495 330*28 [22]</p>
+                    <p><span class="place-name">沖繩世界文化王國・玉泉洞</span> <span class="place-name-jp">おきなわワールド・玉泉洞</span>: Map Code: 232 495 330*28 [22]</p>
                     <a href="https://www.gyokusendo.co.jp/okinawaworld/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">沖繩世界官網</a>
                     <a href="https://www.klook.com/zh-TW/activity/1725-okinawa-world-culture-kingdom-gyokusendo-cave-ticket-okinawa/" target="_blank" rel="noopener noreferrer" class="cta-button">Klook 購票優惠</a>
                 </section>
@@ -257,8 +356,8 @@
                     <div id="map-day5" class="map-container" role="img" aria-label="第五天行程地圖與路線"></div>
                     <h4>行程規劃 (二選一)</h4>
                     <ul>
-                        <li><strong>方案A (高能量型)</strong>: 前往「浦添大公園」，讓孩子們在90公尺長的超長滾輪溜滑梯與遊樂設施中盡情玩樂 [23, 24, 25]。</li>
-                        <li><strong>方案B (悠閒購物型)</strong>: 前往「iias 沖繩豐崎」或「PARCO CITY」等大型商場進行最後的採購，這些商場均設有大型親子設施 [26, 27, 28]。</li>
+                        <li><span class="place-name">方案A (高能量型)</span>: 前往「浦添大公園」，讓孩子們在90公尺長的超長滾輪溜滑梯與遊樂設施中盡情玩樂 [23, 24, 25]。</li>
+                        <li><span class="place-name">方案B (悠閒購物型)</span>: 前往「iias 沖繩豐崎」或「PARCO CITY」等大型商場進行最後的採購，這些商場均設有大型親子設施 [26, 27, 28]。</li>
                     </ul>
                     <h4>最終行動</h4>
                     <ol style="list-style-type: decimal; padding-left: 20px;">
@@ -267,7 +366,7 @@
                         <li>辦理登機手續，搭機返回台灣。</li>
                     </ol>
                     <h4>景點資訊</h4>
-                    <p><strong>浦添大公園:</strong> Map Code: 33 312 045*58 [24]</p>
+                    <p><span class="place-name">浦添大公園</span> <span class="place-name-jp">浦添大公園</span>: Map Code: 33 312 045*58 [24]</p>
                 </section>
             </article>
 
@@ -333,17 +432,17 @@
             });
 
             directionsService
-               .route({
+                .route({
                     origin: routeData.origin,
                     destination: routeData.destination,
-                    waypoints: routeData.waypoints ||,
+                    waypoints: routeData.waypoints || '',
                     optimizeWaypoints: true,
                     travelMode: google.maps.TravelMode.DRIVING,
                 })
-               .then((response) => {
+                .then((response) => {
                     directionsRenderer.setDirections(response);
                 })
-               .catch((e) => {
+                .catch((e) => {
                     mapElement.innerHTML = `<p style="text-align:center; padding: 20px;">無法規劃地圖路線。請確認您的API金鑰是否有效且已啟用Directions API。</p>`;
                     console.error("Directions request failed: " + e);
                 });
@@ -365,12 +464,12 @@
                 ]
             });
 
-            // Day 3: 北部區域
+            // Day 3: 北部區域 (修正後的路徑)
             createMapWithRoute(directionsService, 'map-day3', {
                 origin: 'ホテル オリオン モトブ リゾート＆スパ',
                 destination: 'ホテル オリオン モトブ リゾート＆スパ',
-                waypoints:
-            });
+                waypoints:[]
+                });
 
             // Day 4: 北部 -> 南部
             createMapWithRoute(directionsService, 'map-day4', {
