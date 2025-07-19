@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沖繩五日四夜自駕親子行程規劃 (優化版)</title>
+    <style>
+        :root {
+            --primary-color: #00796b; /* 主題色 - 藍綠色 */
+            --light-primary-color: #e0f2f1; /* 淺主題色 */
+            --border-color: #b2dfdb;
+            --text-color: #333;
+            --heading-color: #263238;
+            --background-color: #f7f9f9;
+            --white: #ffffff;
+            --gray: #aaa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.7;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--light-primary-color);
+            padding-bottom: 0.5em;
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+
+        h2 {
+             margin-top: 2em;
+        }
+        
+        h3 {
+             color: var(--heading-color);
+             margin-top: 1.5em;
+        }
+
+        details {
+            margin-bottom: 1.5em;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden; /* 確保圓角效果 */
+            background-color: var(--white);
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: var(--white);
+            padding: 12px 16px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.2s ease-in-out;
+            color: var(--primary-color);
+        }
+        
+        summary:hover {
+            background-color: var(--light-primary-color);
+        }
+
+        summary::marker {
+            display: none; /* 隱藏原生箭頭 */
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary::after {
+            content: '▶';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.2s ease-in-out;
+            font-size: 0.8em;
+        }
+
+        details[open] > summary::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+        
+        .details-content {
+            padding: 0 20px 20px 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: var(--light-primary-color);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* 響應式表格樣式 (RWD for Tables) */
+        @media (max-width: 600px) {
+            table thead {
+                display: none; /* 隱藏桌面版的表頭 */
+            }
+
+            table, table tbody, table tr, table td {
+                display: block;
+                width: 100%;
+            }
+
+            table tr {
+                margin-bottom: 1rem;
+                border: 1px solid var(--gray);
+                border-radius: 4px;
+            }
+
+            table td {
+                text-align: right; /* 讓內容靠右對齊 */
+                padding-left: 50%; /* 空出左半邊給標籤 */
+                position: relative;
+                border-bottom: 1px solid #eee;
+            }
+            
+            table td:last-child {
+                border-bottom: 0;
+            }
+
+            table td::before {
+                content: attr(data-label); /* 從 data-label 屬性抓取文字 */
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1>沖繩五日四夜自駕親子行程 (8/10～8/15)</h1>
+        <p>以下行程針對兩大兩小的家庭，整合了交通、住宿與遊玩建議。每天行程內容包含各景點的簡介、推薦造訪時段、預計停留時間與親子適合度評估，並提供景點地址與 Google 地圖連結。每日日程採用可收合的折疊區塊呈現，點擊「Day X」可展開查看詳細內容。每日亦附上當天預算概算，並於文末彙總全程總預算供參考。</p>
+        
+        <details open>
+            <summary>Day 1 - 抵達沖繩・漫遊那霸市區</summary>
+            <div class="details-content">
+                <p><i>抵達當天先在那霸市區輕鬆逛逛，適應沖繩氛圍。</i></p>
+                <p><strong>行程概覽：</strong>上午從台灣飛抵那霸機場，辦妥租車手續後開往市區飯店休息。下午前往【首里城公園】參觀琉球王國歷史，接著傍晚在【國際通】散步購物、品嚐沖繩美食。晚上入住那霸市區飯店，為隔天北上行程養精蓄銳。</p>
+                <div id="map-day1" style="height: 400px; width: 100%; border-radius: 8px; margin: 1em 0;"></div>
+                <p>
+                    <strong>首里城公園</strong> –
+                    <em>推薦時段：下午；停留：約1.5小時；親子適合度：★★★★☆</em>
+                    <br> 地址：沖繩縣那霸市首里金城町1-2 (<a href="https://goo.gl/maps/6YeZL6Loj4Rf1TjG8" target="_blank" rel="noopener noreferrer">Google地圖</a>)
+                    <br> 簡介：首里城是琉球王國的古都城址，也是沖繩的重要文化遺產。雖然主殿曾於2019年遭火災毀損，目前正在重建中，但城區周邊仍可參觀守禮門等歷史建築遺跡。園區高處可遠眺那霸市景，小朋友可以在廣場奔跑，親子共遊也能感受濃厚的歷史氛圍。
+                </p>
+                <p>
+                    <strong>國際通</strong> –
+                    <em>推薦時段：傍晚至夜間；停留：約2小時；親子適合度：★★★★☆</em>
+                    <br> 地址：沖繩縣那霸市牧志周邊 (<a href="https://goo.gl/maps/M6R6XVGh6RP8yaFp7" target="_blank" rel="noopener noreferrer">Google地圖</a>)
+                    <br> 簡介：國際通是那霸市最繁華的商店街，全長約1.6公里，兩旁林立各式餐廳、紀念品店與甜品店。傍晚時分來此可欣賞街頭藝人表演，品嚐道地的沖繩料理如 <span title="沖繩麵">沖繩麵</span>、<span title="苦瓜炒豆腐等沖繩家常菜">炒苦瓜</span>等。對小朋友而言，街上色彩繽紛的招牌和充滿南國風情的氛圍都非常新奇。
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">費用項目</th>
+                            <th scope="col">日圓</th>
+                            <th scope="col">台幣</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="費用項目">住宿（那霸市區飯店）</td>
+                            <td data-label="日圓">12,000</td>
+                            <td data-label="台幣">2,400</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">交通（租車、油資等）</td>
+                            <td data-label="日圓">6,500</td>
+                            <td data-label="台幣">1,300</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">門票</td>
+                            <td data-label="日圓">0</td>
+                            <td data-label="台幣">0</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">餐食</td>
+                            <td data-label="日圓">5,000</td>
+                            <td data-label="台幣">1,000</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">其他</td>
+                            <td data-label="日圓">1,000</td>
+                            <td data-label="台幣">200</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目"><strong>當日小計</strong></td>
+                            <td data-label="日圓"><strong>24,500</strong></td>
+                            <td data-label="台幣"><strong>4,900</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <details>
+            <summary>Day 2 - 中部海岸線自駕（美國村・萬座毛）</summary>
+            <div class="details-content">
+                 <p><i>驅車北上沖繩本島中部，飽覽西海岸迷人風光。</i></p>
+                 <p><strong>行程概覽：</strong>早上從那霸出發沿高速公路北上，途中在北谷町停留遊覽【美國村】，中午於美國村用餐。隨後繼續駕車前往恩納村，下午造訪著名的海岸風景【萬座毛】。傍晚可在度假飯店附近海灘戲水或休息。夜宿恩納或名護地區的度假飯店，享受飯店親子設施。</p>
+                 <div id="map-day2" style="height: 400px; width: 100%; border-radius: 8px; margin: 1em 0;"></div>
+                 <p>
+                    <strong>美國村</strong> –
+                    <em>推薦時段：上午；停留：約2小時；親子適合度：★★★★★</em>
+                    <br> 地址：沖繩縣中頭郡北谷町美浜 (<a href="https://goo.gl/maps/4LvsWdf8DL7DLg2T6" target="_blank" rel="noopener noreferrer">Google地圖</a>)
+                    <br> 簡介：美國村是一處融合美軍風情和娛樂購物的複合商區。園區內有繽紛的建築和地標摩天輪，小朋友對此充滿好奇。附近的 <span title="北谷海灘，緊鄰美國村">日落海灘</span> 沙灘乾淨平緩，如時間充裕可帶孩童戲水玩沙。
+                </p>
+                <p>
+                    <strong>萬座毛</strong> –
+                    <em>推薦時段：午後；停留：約1小時；親子適合度：★★★☆☆</em>
+                    <br> 地址：沖繩縣國頭郡恩納村恩納 (<a href="https://goo.gl/maps/7zgENgXZ8CkRQv2Q8" target="_blank" rel="noopener noreferrer">Google地圖</a>)
+                    <br> 簡介：萬座毛是沖繩西海岸著名的海岸懸崖景觀，其象鼻岩造型和壯麗的海天一線景色令人難忘。景區有平坦步道可推嬰兒車漫步，但懸崖邊沒有欄杆，小朋友需由大人陪同緊握避免靠近崖邊。
+                </p>
+                <table>
+                     <thead>
+                        <tr>
+                            <th scope="col">費用項目</th>
+                            <th scope="col">日圓</th>
+                            <th scope="col">台幣</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="費用項目">住宿（海濱度假飯店）</td>
+                            <td data-label="日圓">18,000</td>
+                            <td data-label="台幣">3,600</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">交通（租車、油資、過路費）</td>
+                            <td data-label="日圓">7,500</td>
+                            <td data-label="台幣">1,500</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">門票</td>
+                            <td data-label="日圓">0</td>
+                            <td data-label="台幣">0</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">餐食</td>
+                            <td data-label="日圓">10,000</td>
+                            <td data-label="台幣">2,000</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目">其他</td>
+                            <td data-label="日圓">2,000</td>
+                            <td data-label="台幣">400</td>
+                        </tr>
+                        <tr>
+                            <td data-label="費用項目"><strong>當日小計</strong></td>
+                            <td data-label="日圓"><strong>37,500</strong></td>
+                            <td data-label="台幣"><strong>7,500</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+        
+        <h2>行程總預算</h2>
+        <p>
+            以上每日預估花費僅供參考，實際支出將視個人選擇有所增減。以4人家庭計算，此五日四夜行程總預算約為
+            <strong>157,900日圓（約31,580台幣）</strong>。建議預留約5-10%的彈性預算以因應臨時增加的費用或購物開銷。
+        </p>
+    </main>
+
+    <script>
+        // --- Google Maps API Refactored Script ---
+
+        /**
+         * 建立並初始化 Google 地圖與路線
+         * @param {object} mapConfig - 地圖設定物件
+         * @param {string} mapConfig.mapId - 地圖容器的 HTML ID
+         * @param {object} mapConfig.center - 地圖中心點 {lat, lng}
+         * @param {number} mapConfig.zoom - 地圖縮放等級
+         * @param {object} mapConfig.origin - 路線起點 {lat, lng}
+         * @param {object} mapConfig.destination - 路線終點 {lat, lng}
+         * @param {Array<object>} mapConfig.waypoints - 路線中途點陣列 [{location: {lat, lng}}]
+         */
+        function createMap(mapConfig) {
+            const mapElement = document.getElementById(mapConfig.mapId);
+            if (!mapElement) {
+                console.error(`Map container #${mapConfig.mapId} not found.`);
+                return;
+            }
+
+            const map = new google.maps.Map(mapElement, {
+                center: mapConfig.center,
+                zoom: mapConfig.zoom,
+                mapId: `OKINAWA_TRIP_${mapConfig.mapId}` // Optional: For Cloud-based map styling
+            });
+
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            directionsService.route({
+                origin: mapConfig.origin,
+                destination: mapConfig.destination,
+                waypoints: mapConfig.waypoints,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(response);
+                } else {
+                    console.error('Directions request failed due to ' + status);
+                    mapElement.innerHTML = `<p style="text-align:center; padding-top: 50px;">地圖路線載入失敗 (${status})</p>`;
+                }
+            });
+        }
+        
+        /**
+         * 主初始化函式，由 Google Maps API 回呼
+         */
+        function initMap() {
+            // 將所有地圖的資料集中管理
+            const mapData = [
+                {
+                    mapId: 'map-day1',
+                    center: { lat: 26.21, lng: 127.68 }, zoom: 11,
+                    origin: { lat: 26.1967, lng: 127.6489 }, // 那霸機場
+                    destination: { lat: 26.2123, lng: 127.6791 }, // 國際通
+                    waypoints: [{ location: { lat: 26.2181, lng: 127.7169 } }] // 首里城
+                },
+                {
+                    mapId: 'map-day2',
+                    center: { lat: 26.4, lng: 127.78 }, zoom: 10,
+                    origin: { lat: 26.2123, lng: 127.6791 }, // 那霸市區
+                    destination: { lat: 26.5050, lng: 127.8503 }, // 萬座毛
+                    waypoints: [{ location: { lat: 26.3159, lng: 127.7577 } }] // 美國村
+                },
+                // ... 將 Day 3, 4, 5 的資料加入此處 ...
+                // 範例：
+                // {
+                //     mapId: 'map-day3',
+                //     center: { lat: 26.60, lng: 127.85 }, zoom: 10,
+                //     origin: { lat: 26.5050, lng: 127.8503 }, // 恩納村
+                //     destination: { lat: 26.6944, lng: 127.8779 }, // 美麗海水族館
+                //     waypoints: [] 
+                // }
+            ];
+
+            // 遍歷資料並建立所有地圖
+            mapData.forEach(createMap);
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&callback=initMap&libraries=geometry,drawing"
+            async defer></script>
+</body>
+</html>
