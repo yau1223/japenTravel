@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>沖繩五日四夜自駕親子行程規劃</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 1em;
+        }
+
+        details {
+            margin-bottom: 1.5em;
+        }
+
+        summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #e6f7ff;
+            padding: 8px;
+            border: 1px solid #bce0fd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            summary::-webkit-details-marker {
+                color: #555;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #f0f8ff;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>沖繩五日四夜自駕親子行程 (8/10～8/15)</h1>
+    <p>以下行程針對兩大兩小的家庭，整合了交通、住宿與遊玩建議。每天行程內容包含各景點的簡介、推薦造訪時段、預計停留時間與親子適合度評估，並提供景點地址與 Google 地圖連結。每日日程採用可收合的折疊區塊呈現，點擊「Day X」可展開查看詳細內容。每日亦附上當天預算概算，並於文末彙總全程總預算供參考。</p> <!-- 地圖互動功能：請將 AIzaSyBPf9ZAh3U_1lcxDtlJT-5i_A2lAdh2W1Q 替換為您的 Google Maps API 金鑰 -->
+
+
+    <script>function initMap() { initMapDay1(); initMapDay2(); initMapDay3(); initMapDay4(); initMapDay5(); } function initMapDay1() {
+            var map1 = new google.maps.Map(document.getElementById('map-day1'), { center: { lat: 26.21, lng: 127.68 }, zoom: 11 }); var directionsService = new google.maps.DirectionsService(); var directionsRenderer = new google.maps.DirectionsRenderer(); directionsRenderer.setMap(map1); directionsService.route({
+                origin: { lat: 26.1967, lng: 127.6489 }, // 那霸機場 
+                destination: { lat: 26.2123, lng: 127.6791 },
+                // 國際通附近 
+                waypoints: [{ location: { lat: 26.2181, lng: 127.7169 } }],
+                // 首里城 
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function (response, status) { if (status === 'OK') { directionsRenderer.setDirections(response); } });
+        } function initMapDay2() { var map2 = new google.maps.Map(document.getElementById('map-day2'), { center: { lat: 26.4, lng: 127.78 }, zoom: 10 }); var directionsService = new google.maps.DirectionsService(); var directionsRenderer = new google.maps.DirectionsRenderer(); directionsRenderer.setMap(map2); directionsService.route({ origin: { lat: 26.2123, lng: 127.6791 },
+            // 那霸市區 
+            destination: { lat: 26.5050, lng: 127.8503 },
+            // 萬座毛 
+            waypoints: [{ location: { lat: 26.3159, lng: 127.7577 } }],
+            // 美國村 
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) { if (status === 'OK') { directionsRenderer.setDirections(response); } });
+        } function initMapDay3() { var map3 = new google.maps.Map(document.getElementById('map-day3'), { center: { lat: 26.60, lng: 127.85 }, zoom: 10 }); var directionsService = new google.maps.DirectionsService(); var directionsRenderer = new google.maps.DirectionsRenderer(); directionsRenderer.setMap(map3); directionsService.route({ origin: { lat: 26.5050, lng: 127.8503 },
+            // 恩納村（前一晚住宿地） 
+            destination: { lat: 26.6944, lng: 127.8779 },
+            // 美麗海水族館 
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) { if (status === 'OK') { directionsRenderer.setDirections(response); } });
+        } function initMapDay4() { var map4 = new google.maps.Map(document.getElementById('map-day4'), { center: { lat: 26.55, lng: 127.95 }, zoom: 9 }); var directionsService = new google.maps.DirectionsService(); var directionsRenderer = new google.maps.DirectionsRenderer(); directionsRenderer.setMap(map4); directionsService.route({ origin: { lat: 26.5915, lng: 127.9773 },
+            // 名護（DINO恐龍樂園附近） 
+            destination: { lat: 26.2123, lng: 127.6791 },
+            // 那霸市區（返回） 
+            waypoints: [{ location: { lat: 26.6106, lng: 127.9915 } }],
+            // NEO Park 
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) { if (status === 'OK') { directionsRenderer.setDirections(response); } });
+        } function initMapDay5() { var map5 = new google.maps.Map(document.getElementById('map-day5'), { center: { lat: 26.10, lng: 127.72 }, zoom: 10 }); var directionsService = new google.maps.DirectionsService(); var directionsRenderer = new google.maps.DirectionsRenderer(); directionsRenderer.setMap(map5); directionsService.route({ origin: { lat: 26.2123, lng: 127.6791 },
+            // 那霸市區 
+            destination: { lat: 26.1967, lng: 127.6489 },
+            // 那霸機場 
+            waypoints: [{ location: { lat: 26.1403, lng: 127.7489 } }],
+            // 玉泉洞（沖繩世界） 
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) { if (status === 'OK') { directionsRenderer.setDirections(response); } });
+        }
+    </script>
+
+    <details>
+        <summary>Day 1 - 抵達沖繩・漫遊那霸市區</summary> :contentReference[oaicite:0]{index=0} *抵達當天先在那霸市區輕鬆逛逛，適應沖繩氛圍。* **行程概覽：**上午從台灣飛抵那霸機場，辦妥租車手續後開往市區飯店休息。下午前往【首里城公園】參觀琉球王國歷史，接著傍晚在【國際通】散步購物、品嚐沖繩美食。晚上入住那霸市區飯店，為隔天北上行程養精蓄銳。
+        <div id="map-day1" style="height: 400px; width: 100%;"></div>
+        <p>
+            <strong>首里城公園</strong> –
+            <em>推薦時段：下午；停留：約1.5小時；親子適合度：★★★★☆</em>
+            <br> 地址：沖繩縣那霸市首里金城町1-2（
+            <a href="https://goo.gl/maps/6YeZL6Loj4Rf1TjG8">Google地圖</a>）
+            <br> 簡介：首里城是琉球王國的古都城址，也是沖繩的重要文化遺產。雖然主殿曾於2019年遭火災毀損，目前正在重建中，但城區周邊仍可參觀守禮門等歷史建築遺跡:contentReference[oaicite:1]{index=1}。園區高處可遠眺那霸市景，小朋友可以在廣場奔跑，親子共遊也能感受濃厚的歷史氛圍。
+        </p>
+        <p>
+            <strong>國際通</strong> –
+            <em>推薦時段：傍晚至夜間；停留：約2小時；親子適合度：★★★★☆</em>
+            <br> 地址：沖繩縣那霸市牧志周邊（
+            <a href="https://goo.gl/maps/M6R6XVGh6RP8yaFp7">Google地圖</a>）
+            <br> 簡介：國際通是那霸市最繁華的商店街，全長約1.6公里，兩旁林立各式餐廳、紀念品店與甜品店。傍晚時分來此可欣賞街頭藝人表演，品嚐道地的沖繩料理如
+            <span title="沖繩麵">沖繩麵</span>、
+            <span title="苦瓜炒豆腐等沖繩家常菜">炒苦瓜</span>等:contentReference[oaicite:2]{index=2}。對小朋友而言，街上色彩繽紛的招牌和充滿南國風情的氛圍都非常新奇，有些店家（如玩具店、唐吉訶德等）也十分適合親子同樂。
+        </p>
+        <table>
+            <tr>
+                <th>費用項目</th>
+                <th>日圓</th>
+                <th>台幣</th>
+            </tr>
+            <tr>
+                <td>住宿（那霸市區飯店）</td>
+                <td>12,000</td>
+                <td>2,400</td>
+            </tr>
+            <tr>
+                <td>交通（租車、油資等）</td>
+                <td>6,500</td>
+                <td>1,300</td>
+            </tr>
+            <tr>
+                <td>門票</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>餐食</td>
+                <td>5,000</td>
+                <td>1,000</td>
+            </tr>
+            <tr>
+                <td>其他</td>
+                <td>1,000</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <th>當日小計</th>
+                <th>24,500</th>
+                <th>4,900</th>
+            </tr>
+        </table>
+    </details> <details>
+        <summary>Day 2 - 中部海岸線自駕（美國村・萬座毛）</summary> :contentReference[oaicite:3]{index=3} *驅車北上沖繩本島中部，飽覽西海岸迷人風光。* **行程概覽：**早上從那霸出發沿高速公路北上，途中在北谷町停留遊覽【美國村】，中午於美國村用餐。隨後繼續駕車前往恩納村，下午造訪著名的海岸風景【萬座毛】。傍晚可在度假飯店附近海灘戲水或休息。夜宿恩納或名護地區的度假飯店，享受飯店親子設施。
+        <div id="map-day2" style="height: 400px; width: 100%;"></div>
+        <p>
+            <strong>美國村</strong> –
+            <em>推薦時段：上午；停留：約2小時；親子適合度：★★★★★</em>
+            <br> 地址：沖繩縣中頭郡北谷町美浜（
+            <a href="https://goo.gl/maps/4LvsWdf8DL7DLg2T6">Google地圖</a>）
+            <br> 簡介：美國村是一處融合美軍風情和娛樂購物的複合商區:contentReference[oaicite:4]{index=4}。園區內有繽紛的建築和地標摩天輪，小朋友對此充滿好奇。家長們可帶孩子搭乘摩天輪俯瞰海濱風光，或在Carnival Park遊樂場體驗遊戲。園區內餐廳選擇多，例如美式漢堡、鬆餅店等，非常適合家庭用餐。附近的
+            <span title="北谷海灘，緊鄰美國村">日落海灘</span>沙灘乾淨平緩，如時間充裕可帶孩童戲水玩沙。
+        </p>
+        <p>
+            <strong>萬座毛</strong> –
+            <em>推薦時段：午後；停留：約1小時；親子適合度：★★★☆☆</em>
+            <br> 地址：沖繩縣國頭郡恩納村恩納（
+            <a href="https://goo.gl/maps/7zgENgXZ8CkRQv2Q8">Google地圖</a>）
+            <br> 簡介：萬座毛是沖繩西海岸著名的海岸懸崖景觀，其象鼻岩造型和壯麗的海天一線景色令人難忘:contentReference[oaicite:5]{index=5}。景區有平坦步道可推嬰兒車漫步，但懸崖邊沒有欄杆，小朋友需由大人陪同緊握避免靠近崖邊。午後陽光下，海水呈現湛藍色彩，非常適合拍照。親子在此可認識大自然的鬼斧神工，但停留時間不宜過長，注意補水防曬。
+        </p>
+        <table>
+            <tr>
+                <th>費用項目</th>
+                <th>日圓</th>
+                <th>台幣</th>
+            </tr>
+            <tr>
+                <td>住宿（海濱度假飯店）</td>
+                <td>18,000</td>
+                <td>3,600</td>
+            </tr>
+            <tr>
+                <td>交通（租車、油資、過路費）</td>
+                <td>7,500</td>
+                <td>1,500</td>
+            </tr>
+            <tr>
+                <td>門票</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>餐食</td>
+                <td>10,000</td>
+                <td>2,000</td>
+            </tr>
+            <tr>
+                <td>其他</td>
+                <td>2,000</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <th>當日小計</th>
+                <th>37,500</th>
+                <th>7,500</th>
+            </tr>
+        </table>
+    </details> <details>
+        <summary>Day 3 - 美之海水族館與北部探索</summary> :contentReference[oaicite:6]{index=6} *拜訪沖繩著名的美麗海水族館，深入海洋奧秘，親子共度知識與歡樂的一天。* **行程概覽：**上午從飯店出發前往本部町的【沖繩美麗海水族館】（Ocean Expo Park內），參觀館內豐富的海洋生物展示，包括巨大的鯨鯊和曼塔魟等:contentReference[oaicite:7]{index=7}:contentReference[oaicite:8]{index=8}。午後可在水族館附近的<span title="海洋博公園綜合區域，包括兒童遊樂設施和植物園等">海洋博公園</span>自由活動，如參觀兒童遊樂場或海龜池，或者前往園區內的<span title="免費開放的天然沙灘">翡翠海灘</span>戲水放鬆。傍晚驅車返回飯店休息，準備隔天的行程。
+        <div id="map-day3" style="height: 400px; width: 100%;"></div>
+        <p>
+            <strong>沖繩美麗海水族館</strong> –
+            <em>推薦時段：上午；停留：約3-4小時；親子適合度：★★★★★</em>
+            <br> 地址：沖繩縣國頭郡本部町石川424（
+            <a href="https://goo.gl/maps/7YdbeFfBGr3YzBqFA">Google地圖</a>）
+            <br> 簡介：美麗海水族館是日本規模最大的水族館之一:contentReference[oaicite:9]{index=9}。館內最有名的是高達三層樓的「黑潮之海」主水槽，可近距離觀看鯨鯊、魟魚等巨型海洋生物優游的震撼場面:contentReference[oaicite:10]{index=10}:contentReference[oaicite:11]{index=11}。水族館針對小朋友設有觸摸池體驗區，可親手觸摸海星和海參，寓教於樂。館內還提供嬰兒車租借、母嬰室等貼心服務，非常適合親子共遊。建議預留至少半天時間參觀，並安排午餐於館內餐廳或戶外野餐區解決。
+        </p>
+        <p>
+            <strong>海洋博公園周邊</strong> –
+            <em>推薦時段：下午；停留：1-2小時；親子適合度：★★★★☆</em>
+            <br> 地址：沖繩縣國頭郡本部町字石川（
+            <a href="https://goo.gl/maps/EgBPfUpSviug9nSWA">園區地圖</a>）
+            <br> 簡介：水族館所在地的海洋博公園腹地廣大，還有其他適合親子的景點。園內的
+            <span title="海豚表演池">海豚劇場</span>定時上演海豚與海獅表演（免費觀賞），可讓孩子們欣賞聰明動物的精采演出。此外，公園內設有兒童遊戲場和植物園，可以讓小朋友發洩體力或接觸大自然。臨近的翡翠海灘沙灘潔白柔軟，如果天氣炎熱，傍午後可帶孩子在淺灘踏浪玩沙，享受親水時光。整體而言，公園周邊為家庭提供了豐富的免費活動，是消磨下午時光的理想去處。
+        </p>
+        <table>
+            <tr>
+                <th>費用項目</th>
+                <th>日圓</th>
+                <th>台幣</th>
+            </tr>
+            <tr>
+                <td>住宿（北部度假飯店）</td>
+                <td>18,000</td>
+                <td>3,600</td>
+            </tr>
+            <tr>
+                <td>交通（租車、油資）</td>
+                <td>6,500</td>
+                <td>1,300</td>
+            </tr>
+            <tr>
+                <td>門票</td>
+                <td>5,000</td>
+                <td>1,000</td>
+            </tr>
+            <tr>
+                <td>餐食</td>
+                <td>10,000</td>
+                <td>2,000</td>
+            </tr>
+            <tr>
+                <td>其他</td>
+                <td>2,000</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <th>當日小計</th>
+                <th>41,500</th>
+                <th>8,300</th>
+            </tr>
+        </table>
+    </details> <details>
+        <summary>Day 4 - 名護親子樂園之旅（DINO恐龍樂園＋Neo Park）</summary> :contentReference[oaicite:12]{index=12} *深入名護市的自然與娛樂景點，來一場恐龍與動物的親子冒險！* **行程概覽：**上午退房後前往名護市的【DINO恐龍樂園】（又稱山原亞熱帶森林恐龍公園）:contentReference[oaicite:13]{index=13}參觀。園區位於亞熱帶雨林中，陳列了逼真的等身大型恐龍模型約80種，配有聲光效果，讓人宛如置身侏羅紀世界:contentReference[oaicite:14]{index=14}。孩子們可近距離觀賞自己喜愛的恐龍。午餐可在鄰近的御果子御殿名護店享用甜點或簡餐。下午造訪名護市區的自然動植物園【Neo Park Okinawa】，與各種動物零距離接觸。傍晚驅車南下返回那霸，夜宿那霸市區飯店，準備隔日離島。
+        <div id="map-day4" style="height: 400px; width: 100%;"></div>
+        <p>
+            <strong>DINO恐龍樂園（山原亞熱帶森林公園）</strong> –
+            <em>推薦時段：上午；停留：約2小時；親子適合度：★★★★★</em>
+            <br> 地址：沖繩縣名護市中山1024-1（
+            <a href="https://goo.gl/maps/72H6Mg7JzXcNLRuw9">Google地圖</a>）
+            <br> 簡介：這是一座以恐龍主題的戶外探險樂園，由名護知名伴手禮店御果子御殿重新打造:contentReference[oaicite:15]{index=15}。園內保存了天然的筆筒樹原始林，沿著步道可看到霸王龍、劍龍、腕龍等約80種栩栩如生的恐龍模型散布其中，並不時傳出恐龍吼叫聲:contentReference[oaicite:16]{index=16}:contentReference[oaicite:17]{index=17}。對於恐龍迷的小朋友而言，每一步都有驚喜：有的恐龍會擺動身體或張開大嘴，非常逼真。但由於路徑有上下坡和階梯，建議穿防滑鞋並注意孩童安全:contentReference[oaicite:18]{index=18}。出口處緊鄰御果子御殿名護店，可順道品嚐紅芋塔等點心並選購伴手禮:contentReference[oaicite:19]{index=19}。
+        </p>
+        <p>
+            <strong>Neo Park Okinawa</strong> –
+            <em>推薦時段：下午；停留：約2-3小時；親子適合度：★★★★☆</em>
+            <br> 地址：沖繩縣名護市名護4607-41（
+            <a href="https://goo.gl/maps/pbVvpr4zL8YDeRxS6">Google地圖</a>）
+            <br> 簡介：Neo Park 是名護市大型的放養式動植物公園:contentReference[oaicite:20]{index=20}。園區依照世界不同熱帶地區生態打造區域，遊客可在開放式環境中近距離觀賞上百種鳥類、哺乳類和魚類:contentReference[oaicite:21]{index=21}:contentReference[oaicite:22]{index=22}。一進園區便有成群的火烈鳥在湖畔歡迎，非常吸引孩子目光:contentReference[oaicite:23]{index=23}。園內備有飼料可購買（¥200），讓遊客體驗餵食環頦鳥類的樂趣:contentReference[oaicite:24]{index=24}。此外還有迷你陸龜乘騎體驗區、小火車繞園等付費項目（如小火車環園成人¥800/小孩¥600）:contentReference[oaicite:25]{index=25}。整體環境貼近自然且空間開闊，適合讓小朋友自由奔跑親近動物，寓教於樂。結束參觀後，開車約1.5小時可返回那霸市區。
+        </p>
+        <table>
+            <tr>
+                <th>費用項目</th>
+                <th>日圓</th>
+                <th>台幣</th>
+            </tr>
+            <tr>
+                <td>住宿（那霸市區飯店）</td>
+                <td>12,000</td>
+                <td>2,400</td>
+            </tr>
+            <tr>
+                <td>交通（租車、油資、過路費）</td>
+                <td>8,500</td>
+                <td>1,700</td>
+            </tr>
+            <tr>
+                <td>門票</td>
+                <td>7,200</td>
+                <td>1,440</td>
+            </tr>
+            <tr>
+                <td>餐食</td>
+                <td>8,000</td>
+                <td>1,600</td>
+            </tr>
+            <tr>
+                <td>其他</td>
+                <td>2,000</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <th>當日小計</th>
+                <th>37,900</th>
+                <th>7,580</th>
+            </tr>
+        </table>
+    </details> <details>
+        <summary>Day 5 - 沖繩文化體驗・返回溫暖的家</summary> :contentReference[oaicite:26]{index=26} *旅程最後一天體驗沖繩傳統文化與自然景觀，為親子之旅畫下精彩句點。* **行程概覽：**早餐後從那霸出發前往南城市的主題公園【沖繩世界】參觀，重點體驗神秘的鐘乳石洞「玉泉洞」以及傳統文化村的手工藝表演。中午在園區內用餐或享用當地風味餐廳。下午適時驅車前往那霸機場歸還租車，辦理登機手續，搭機返回台灣，結束五天愉快的沖繩親子自駕之旅。
+        <div id="map-day5" style="height: 400px; width: 100%;"></div>
+        <p>
+            <strong>沖繩世界（玉泉洞＆文化村）</strong> –
+            <em>推薦時段：上午；停留：約3小時；親子適合度：★★★★☆</em>
+            <br> 地址：沖繩縣南城市玉城前川1336（
+            <a href="https://goo.gl/maps/ULRz9u3Kh2GZnGXs8">Google地圖</a>）
+            <br> 簡介：沖繩世界是一座將自然與文化融合的主題樂園，內有全長5公里的鐘乳石洞「玉泉洞」、琉球王國主題村「文化王國城寨」等。:contentReference[oaicite:27]{index=27}:contentReference[oaicite:28]{index=28}走進玉泉洞，映入眼簾的是形態各異的鐘乳石和清澈的地下溪流，奇幻燈光營造出夢幻場景，小朋友彷彿置身探險電影（洞內濕滑，需注意孩童腳步）:contentReference[oaicite:29]{index=29}:contentReference[oaicite:30]{index=30}。而在文化村可觀賞傳統的
+            <span title="沖繩傳統舞蹈">エイサー太鼓舞</span>表演，或參與
+            <span title="染布等琉球傳統工藝DIY">琉裝染色</span>、
+            <span title="製糖體驗等">黑糖製作</span>等手作體驗，讓孩子親身感受沖繩文化的魅力。園區整體適合親子共遊，設施完善。結束訪園後，車程約30分鐘即可抵達那霸機場。
+        </p>
+        <p>
+            <strong>那霸機場</strong> –
+            <em>抵達時間：約下午2-3點；</em>還車並辦理離境手續。揮別沖繩前可在機場內最後選購一些伴手禮或品嚐沖繩特色餐點（如
+            <span title="沖繩傳統麵食">沖繩麵</span>）作為本次旅程的收尾。隨後搭乘班機返回台灣，期待下一次的家庭旅行！
+        </p>
+        <table>
+            <tr>
+                <th>費用項目</th>
+                <th>日圓</th>
+                <th>台幣</th>
+            </tr>
+            <tr>
+                <td>住宿（返程當晚無）</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>交通（租車、油資）</td>
+                <td>6,500</td>
+                <td>1,300</td>
+            </tr>
+            <tr>
+                <td>門票</td>
+                <td>4,000</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>餐食</td>
+                <td>5,000</td>
+                <td>1,000</td>
+            </tr>
+            <tr>
+                <td>其他</td>
+                <td>1,000</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <th>當日小計</th>
+                <th>16,500</th>
+                <th>3,300</th>
+            </tr>
+        </table>
+    </details>
+    <h2>行程總預算</h2>
+    <p>
+        以上每日預估花費僅供參考，實際支出將視個人選擇有所增減。以4人家庭計算，此五日四夜行程總預算約為
+        <strong>157,900日圓（約31,580台幣）</strong>。建議預留約5-10%的彈性預算以因應臨時增加的費用或購物開銷。
+    </p>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&signed_in=true&libraries=geometry,drawing&callback=initMap"
+        async defer></script>
+</html>
+
