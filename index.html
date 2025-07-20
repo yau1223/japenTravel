@@ -3,543 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沖繩親子冒險優化行程 (8/10 - 8/14)</title>
-    <meta name="description" content="一份為您家庭量身打造的沖繩五日四夜自駕行程，結合了行程優化、住宿推薦、UI/UX設計與每日Google地圖路徑規劃。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <title>沖繩親子同樂五日自駕遊</title>
     <style>
-        /* --- UI/UX Principle: Visual Hierarchy & Readability --- */
-        :root {
-            --primary-color: #005A9C; /* Deep Blue: Trust, Calm */
-            --secondary-color: #F0F8FF; /* AliceBlue: Clean, Airy Background */
-            --accent-color: #FF6347; /* Coral/Tomato: Action, Energy (for CTAs) */
-            --text-color: #333;
-            --text-color-light: #666;
-            --border-color: #e0e0e0;
-            --font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
-            --border-radius: 12px;
-        }
-
-        /* --- UI/UX Principle: Consistency & Mobile-First RWD --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--font-family);
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--secondary-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
             margin: 0;
-            font-size: 16px;
+            padding: 20px;
         }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        /* --- UI/UX Principle: Semantic Structure & Clear Information Architecture --- */
-        .main-header {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url(https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1740&auto=format&fit=crop) center/cover no-repeat;
-            color: white;
-        }
-
-            .main-header h1 {
-                font-size: 2.5rem;
-                margin: 0;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-            }
-
-            .main-header p {
-                font-size: 1.1rem;
-                opacity: 0.9;
-                margin-top: 0.5rem;
-            }
-
-        .main-nav {
-            background-color: #fff;
-            padding: 0.8rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-            .main-nav a {
-                text-decoration: none;
-                color: var(--primary-color);
-                font-weight: 700;
-                transition: color 0.2s;
-            }
-
-                .main-nav a:hover {
-                    color: var(--accent-color);
-                }
-
-        main > article, main > section {
-            background-color: #fff;
-            padding: 2rem;
-            margin-top: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-top: 2rem;
-        }
-
-        h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-            ul li {
-                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23005A9C" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
-                padding-left: 32px;
-                margin-bottom: 12px;
-            }
-
-        .place-name {
-            font-weight: 700;
-        }
-
-        .place-name-jp {
-            font-size: 0.9em;
-            color: var(--text-color-light);
-            margin-left: 8px;
-        }
-
-        /* --- UI/UX Principle: Clear Call-to-Action (CTA) --- */
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white !important;
-            padding: 12px 24px;
+      .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-            .cta-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            }
-
-        .map-container {
-            width: 100%;
-            height: 450px;
-            margin-top: 1.5rem;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+        h1, h2, h3, h4 {
+            color: #0056b3;
         }
-
-        .expert-tip {
-            background-color: #FFFBEA;
-            border-left: 5px solid #FDBF2D;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-
-            .expert-tip strong {
-                color: #B45309;
-            }
-
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #007bff;
+            margin-top: 25px;
+        }
+      .day-plan {
+            border-left: 3px solid #007bff;
+            padding-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+      .tip {
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
+            margin-top: 20px;
         }
-
         th, td {
-            border: 1px solid var(--border-color);
-            padding: 12px;
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: left;
         }
-
         th {
-            background-color: var(--primary-color);
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+      .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+       .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #28a745;
             color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
         }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .total-row {
-            font-weight: 700;
-            background-color: var(--secondary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 15px;
-            }
-
-            .main-header h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            main > article, main > section {
-                padding: 1.5rem;
-            }
-
-            .map-container {
-                height: 350px;
-            }
+       .map-link:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <h1>沖繩親子冒險優化行程</h1>
-        <p>為您家庭量身打造的五日四夜自駕之旅 (2024/8/10 - 8/14)</p>
-    </header>
+<div class="container">
 
-    <nav class="main-nav">
-        <a href="#strategy">行程戰略</a>
-        <a href="#day1">第一天</a>
-        <a href="#day2">第二天</a>
-        <a href="#day3">第三天</a>
-        <a href="#day4">第四天</a>
-        <a href="#day5">第五天</a>
-        <a href="#logistics">後勤準備</a>
-    </nav>
+    <h1>沖繩親子同樂五日自駕遊</h1>
+    <p>這是一份專為您一家四口（2位大人、2位小朋友）設計的自駕行程。行程結合了沖繩的自然美景、海洋奇觀與文化探索，並在節奏、活動和餐飲上充分考量了家庭旅遊的需求，確保大人輕鬆、小孩開心。</p>
 
-    <div class="container">
-        <main>
-            <section id="strategy">
-                <h2>行程戰略分析與優化建議</h2>
-                <p>您好！很高興為您規劃這次的沖繩家庭之旅。在分析您提出的行程草案後，我發現其核心景點選擇非常適合9歲與11歲的孩子。為了讓您的旅程更加順暢、舒適，我進行了以下關鍵的戰略性調整：</p>
-                <ul>
-                    <li><strong>導入「南北分段住宿」策略</strong>：這是最重要的優化。原計畫第四天需從北部的名護長途跋涉至南部的玉泉洞，單程耗時超過2小時，對親子遊是極大的體力消耗 [1, 2, 3, 4, 5]。新行程將住宿分為「南部1晚 → 北部2晚 → 南部1晚」，徹底解決了此問題，將每日駕駛時間降至最低。</li>
-                    <li><strong>精選符合需求的頂級飯店</strong>：根據您偏好的「溫泉」與「海景」，我為您在南部和北部各挑選了一間評價極高且設施完善的度假飯店。</li>
-                    <li><strong>整合北部行程</strong>：將DINO恐龍樂園與名護ATV越野車安排在同一天，這兩個景點地理位置相近，能最大化您在北部的遊玩效率。</li>
-                    <li><strong>建立天氣應變計畫</strong>：8月是沖繩的颱風季，午後雷陣雨頻繁 [6, 7, 8, 9, 10]。行程中已內建高品質的室內備案（如大型購物中心內的親子設施），確保天氣不佳時也能盡興。</li>
-                </ul>
-                <p>這份優化後的行程，旨在將您寶貴的假期時間從方向盤後解放出來，真正投入到每一次的家庭歡笑與探索之中。</p>
-            </section>
+    <h2>第一部分：行前準備與核心攻略</h2>
 
-            <article id="day1">
-                <h2>第一天 (8/10): 抵達與南部海岸的舒緩適應</h2>
-                <section>
-                    <h3>本日快照</h3>
-                    <table>
-                        <thead><tr><th>項目</th><th>預估時間</th><th>預估花費 (4人)</th></tr></thead>
-                        <tbody>
-                            <tr><td>總駕駛時間</td><td>約 30 分鐘</td><td rowspan="2"><strong>JPY 12,000</strong><br>(約 TWD 2,400)</td></tr>
-                            <tr><td>總活動時間</td><td>約 2-3 小時</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>本日目標：順利抵達，輕鬆入住</h3>
-                    <p>晚班機抵達後不安排緊湊行程，以最快速度入住鄰近機場的溫泉飯店，為旅程揭開完美序幕。</p>
-                    <h4>行程規劃</h4>
-                    <ul>
-                        <li><span class="place-name">晚間</span>: 抵達那霸機場 (Naha Airport / <span class="place-name-jp">那覇空港</span>)，辦理入境手續後，前往租車櫃檯取車。</li>
-                        <li><span class="place-name">住宿</span>: 驅車前往「琉球溫泉瀨長島飯店」，車程僅約15分鐘 [11, 12, 13, 14, 15, 16]。</li>
-                        <li><span class="place-name">晚餐與休憩</span>: 於飯店或步行至旁邊的「瀨長島Umikaji Terrace」用餐 [17, 18, 19]。餐後享受飯店著名的「龍神之湯」天然溫泉，洗去旅途疲憊 [11, 18, 13, 19]。</li>
-                    </ul>
-                    <h4>住宿推薦：琉球溫泉瀨長島飯店 <span class="place-name-jp">琉球温泉 瀬長島ホテル</span></h4>
-                    <p>這間飯店是您南部行程的理想基地，其機場景觀房可讓孩子們觀賞飛機起降，增添獨特樂趣 [11, 13]。</p>
-                    <a href="https://www.resorts.co.jp/senaga/en" target="_blank" rel="noopener noreferrer" class="cta-button">查看飯店官網</a>
-                </section>
-            </article>
+    <h3>A. 交通規劃：自駕是家庭遊的最佳選擇</h3>
+    <ul>
+        <li><strong>核心優勢：</strong> 對於帶著孩子和行李、需要在北部與南部間移動的家庭來說，租車提供了無可比擬的<span class="highlight">靈活性與便利性</span>。您可以隨時停靠、輕鬆應對孩子的突發需求，並探索公共交通難以到達的親子景點 [1]。</li>
+        <li><strong>車輛建議：</strong> 考慮到2大2小及行李，建議選擇中型轎車（Intermediate）或小型廂型車（Van），以確保舒適的乘坐空間與足夠的行李容量。緊湊型車款 [2] 可能會稍嫌擁擠。</li>
+        <li><strong>成本考量：</strong> 雖然八月是租車旺季 [2]，但相較於動輒超過15,000日圓的單程計程車費用 [3]，租車的總體成本效益更高。</li>
+        <li><strong>行程策略：</strong> 建議從第一天抵達機場後租車，直到第四天抵達那霸市區後還車。在那霸市區，利用便捷的Yui單軌電車 [4, 5, 6, 7, 8] 會比開車和找停車位更有效率。</li>
+    </ul>
 
-            <article id="day2">
-                <h2>第二天 (8/11): 黑潮之海與戀之島的北部巡禮</h2>
-                <section>
-                    <h3>本日快照</h3>
-                    <table>
-                        <thead><tr><th>項目</th><th>預估時間</th><th>預估花費 (4人)</th></tr></thead>
-                        <tbody>
-                            <tr><td>總駕駛時間</td><td>約 3 小時</td><td rowspan="2"><strong>JPY 28,080</strong><br>(約 TWD 5,616)</td></tr>
-                            <tr><td>總活動時間</td><td>約 6-7 小時</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>本日目標：暢遊沖繩地標景點</h3>
-                    <p>今日將驅車北上，入住北部基地，探索世界級的美麗海水族館，並感受古宇利島的壯闊海景。</p>
-                    <div id="map-day2" class="map-container" role="img" aria-label="第二天行程地圖與路線"></div>
-                    <h4>行程規劃</h4>
-                    <ul>
-                        <li><span class="place-name">上午</span>: 於瀨長島飯店退房，沿高速公路北上至本部町 (車程約1.5-2小時)。</li>
-                        <li><span class="place-name">住宿</span>: 抵達「Orion 本部度假SPA飯店」，辦理入住或寄放行李。其位置優越，步行即可達水族館 [20, 21, 22, 23, 24, 25, 26]。</li>
-                        <li><span class="place-name">下午</span>: 參觀「沖繩美麗海水族館」，探索神秘的海洋世界。</li>
-                        <li><span class="place-name">傍晚</span>: 驅車跨越古宇利大橋，前往「古宇利海洋塔」欣賞日落時分的絕景 [27, 28, 29, 30, 31]。</li>
-                        <li><span class="place-name">晚餐</span>: 可在古宇利島品嚐特色「蝦蝦飯」[32, 33, 34, 35, 36]，或返回飯店周邊用餐。</li>
-                    </ul>
-                    <div class="expert-tip">
-                        <strong>專家提示：</strong>建議在北上途中，於高速公路的「許田休息站」(道の駅 許田) 購買美麗海水族館的優惠門票，既順路又省錢 [37, 38, 39]。
-                    </div>
-                    <h4>景點資訊</h4>
-                    <p><span class="place-name">沖繩美麗海水族館</span> <span class="place-name-jp">沖縄美ら海水族館</span>: Map Code: 553 075 797*74</p>
-                    <p><span class="place-name">古宇利海洋塔</span> <span class="place-name-jp">古宇利オーシャンタワー</span>: Map Code: 485 661 831*22</p>
-                    <a href="https://churaumi.okinawa/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">水族館官網</a>
-                    <a href="https://www.kouri-oceantower.com/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">海洋塔官網</a>
-                </section>
-            </article>
+    <h3>B. 八月沖繩旅遊須知</h3>
+    <ul>
+        <li><strong>天氣與穿著：</strong> 八月是沖繩最炎熱的月份，平均氣溫約31°C，濕度高 。請為全家人準備輕便、透氣的衣物、防曬乳、遮陽帽和太陽眼鏡。午後可能會有陣雨，建議隨身攜帶雨具 [9]。</li>
+        <li><span class="highlight">颱風應對方案：</span> 您的旅行期間正值颱風季節（6月至11月）。請每日關注天氣預報，並留意飯店發布的「熱帶氣旋準備狀態」（TCCOR）警報 [10, 11]。若有颱風來襲，戶外活動將取消，請務必遵循飯店的安全指引。</li>
+    </ul>
 
-            <article id="day3">
-                <h2>第三天 (8/12): 史前巨獸與現代機具的冒險日</h2>
-                <section>
-                    <h3>本日快照</h3>
-                    <table>
-                        <thead><tr><th>項目</th><th>預估時間</th><th>預估花費 (4人)</th></tr></thead>
-                        <tbody>
-                            <tr><td>總駕駛時間</td><td>約 1.5 小時</td><td rowspan="2"><strong>JPY 42,700</strong><br>(約 TWD 8,540)</td></tr>
-                            <tr><td>總活動時間</td><td>約 4-5 小時</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>本日目標：專為9歲與11歲孩子設計的動感一天</h3>
-                    <p>結合恐龍主題森林探險與刺激的ATV越野車體驗，讓孩子們在山原的自然環境中盡情探索與奔馳。</p>
-                    <div id="map-day3" class="map-container" role="img" aria-label="第三天行程地圖與路線"></div>
-                    <h4>行程規劃</h4>
-                    <ul>
-                        <li><span class="place-name">上午</span>: 前往「DINO恐龍PARK 山原亞熱帶之森」，與栩栩如生的恐龍們近距離接觸 [40, 41, 42, 39, 43, 44, 45, 46]。</li>
-                        <li><span class="place-name">午餐</span>: 體驗沖繩限定的「A&W漢堡」或當地特色餐廳 [32, 33, 47, 48, 49, 50]。</li>
-                        <li><span class="place-name">下午</span>: 參加「名護 ATV 越野車體驗」，在專業指導下穿越叢林小徑 (9歲和11歲兒童可與大人共乘) [51, 10, 16, 52, 53, 54, 55, 56]。</li>
-                        <li><span class="place-name">傍晚</span>: 返回飯店，享受泳池或溫泉設施，放鬆身心。</li>
-                    </ul>
-                    <h4>景點資訊</h4>
-                    <p><span class="place-name">DINO恐龍PARK</span> <span class="place-name-jp">DINO恐竜PARK やんばる亜熱帯の森</span>: Map Code: 206 775 882*25 [39]</p>
-                    <p><span class="place-name">名護 ATV 體驗</span>: 依預約憑證為準</p>
-                    <a href="https://www.okashigoten.co.jp/dino-park/" target="_blank" rel="noopener noreferrer" class="cta-button">恐龍公園官網</a>
-                    <a href="https://www.klook.com/zh-TW/activity/146903-okinawa-atv-adventure-no-license-needed-fun-for-ages-4/" target="_blank" rel="noopener noreferrer" class="cta-button">Klook 預約 ATV</a>
-                </section>
-            </article>
+    <h3>C. 文化與支付禮儀</h3>
+    <ul>
+        <li><strong>貨幣使用：</strong> 在沖繩，特別是北部地區，現金依然非常重要 。許多當地小餐館、市場和部分景點門票僅接受現金 。建議在抵達那霸機場時，於ATM提取足夠的日圓現鈔 。大型飯店、連鎖商店則普遍接受信用卡 [12, 13, 14, 15]。</li>
+        <li><strong>小費文化：</strong> 日本沒有小費文化，給小費反而可能造成對方困擾 。一句真誠的「謝謝 (Arigatou Gozaimasu)」或用餐後的「謝謝款待 (Gochisosama Deshita)」就是最好的感謝 [16]。</li>
+    </ul>
 
-            <article id="day4">
-                <h2>第四天 (8/13): 地心奇景與琉球王國的文化之旅</h2>
-                <section>
-                    <h3>本日快照</h3>
-                    <table>
-                        <thead><tr><th>項目</th><th>預估時間</th><th>預估花費 (4人)</th></tr></thead>
-                        <tbody>
-                            <tr><td>總駕駛時間</td><td>約 2.5 小時</td><td rowspan="2"><strong>JPY 26,000</strong><br>(約 TWD 5,200)</td></tr>
-                            <tr><td>總活動時間</td><td>約 3-4 小時</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>本日目標：探索沖繩南部最大的文化與自然景觀</h3>
-                    <p>今日將從北部返回南部，探訪壯觀的玉泉洞，並體驗琉球王國的傳統文化。</p>
-                    <div id="map-day4" class="map-container" role="img" aria-label="第四天行程地圖與路線"></div>
-                    <h4>行程規劃</h4>
-                    <ul>
-                        <li><span class="place-name">上午</span>: 於 Orion 飯店退房，驅車南下至南城市 (車程約1.5-2小時)。</li>
-                        <li><span class="place-name">中午至下午</span>: 參觀「沖繩世界文化王國・玉泉洞」，探索鐘乳石洞、王國村並觀賞Eisa太鼓舞表演 [57, 58, 59, 31, 25, 60, 61]。</li>
-                        <li><span class="place-name">傍晚</span>: 驅車返回「琉球溫泉瀨長島飯店」辦理入住。</li>
-                        <li><span class="place-name">晚餐</span>: 於瀨長島 Umikaji Terrace 享用晚餐，欣賞夜景。</li>
-                    </ul>
-                    <h4>景點資訊</h4>
-                    <p><span class="place-name">沖繩世界文化王國・玉泉洞</span> <span class="place-name-jp">おきなわワールド・玉泉洞</span>: Map Code: 232 495 330*28 [62, 63]</p>
-                    <a href="https://www.gyokusendo.co.jp/okinawaworld/tc/" target="_blank" rel="noopener noreferrer" class="cta-button">沖繩世界官網</a>
-                    <a href="https://www.klook.com/zh-TW/activity/1725-okinawa-world-culture-kingdom-gyokusendo-cave-ticket-okinawa/" target="_blank" rel="noopener noreferrer" class="cta-button">Klook 購票優惠</a>
-                </section>
-            </article>
+    <h2>第二部分：每日詳細行程規劃</h2>
 
-            <article id="day5">
-                <h2>第五天 (8/14): 活力釋放與滿載而歸的告別日</h2>
-                <section>
-                    <h3>本日快照</h3>
-                    <table>
-                        <thead><tr><th>項目</th><th>預估時間</th><th>預估花費 (4人)</th></tr></thead>
-                        <tbody>
-                            <tr><td>總駕駛時間</td><td>約 1 小時</td><td rowspan="2"><strong>JPY 10,000</strong><br>(約 TWD 2,000)</td></tr>
-                            <tr><td>總活動時間</td><td>約 2-3 小時</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>本日目標：彈性安排最後時光，愉快返程</h3>
-                    <p>在前往機場前，依據體力與興趣選擇最後的活動，為這趟旅程劃下完美的句點。</p>
-                    <div id="map-day5" class="map-container" role="img" aria-label="第五天行程地圖與路線"></div>
-                    <h4>行程規劃 (二選一)</h4>
-                    <ul>
-                        <li><span class="place-name">方案A (高能量型)</span>: 前往「浦添大公園」，讓孩子們在90公尺長的超長滾輪溜滑梯與遊樂設施中盡情玩樂 [64, 65, 66, 4, 67, 68]。</li>
-                        <li><span class="place-name">方案B (悠閒購物型)</span>: 前往「iias 沖繩豐崎」或「PARCO CITY」等大型商場進行最後的採購，這些商場均設有大型親子設施 [69, 70, 71, 51, 59, 52]。</li>
-                    </ul>
-                    <h4>最終行動</h4>
-                    <ol style="list-style-type: decimal; padding-left: 20px;">
-                        <li>於指定時間前至租車公司還車。</li>
-                        <li>搭乘接駁車前往那霸機場 (OKA)。</li>
-                        <li>辦理登機手續，搭機返回台灣。</li>
-                    </ol>
-                    <h4>景點資訊</h4>
-                    <p><span class="place-name">浦添大公園</span> <span class="place-name-jp">浦添大公園</span>: Map Code: 33 312 045*58 [65, 67]</p>
-                </section>
-            </article>
-
-            <section id="logistics">
-                <h2>後勤準備與關鍵指南</h2>
-                <h3>租車與保險</h3>
-                <table>
-                    <thead>
-                        <tr><th>項目</th><th>建議內容</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>車輛尺寸</strong></td>
-                            <td>建議租用7人座休旅車（如Toyota Sienta），以確保4人乘坐及5日行李的舒適空間 [72, 73]。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>ETC 卡</strong></td>
-                            <td>務必租借ETC卡，並詢問是否有定額制的 Expressway Pass (OEP)，可節省過路費與時間 [74, 75, 73]。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>保險</strong></td>
-                            <td>除了標準的免責補償(CDW)外，<strong>強烈建議加保「營業損失賠償(NOC)」的免除方案</strong>，以獲得最完整的保障 [76, 77, 78, 79]。</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
+    <div class="day-plan">
+        <h3>第一天：8月10日 (日) - 抵達沖繩，馳騁向北</h3>
+        <h4>14:35 - 17:20：飛行與抵達</h4>
+        <p>搭乘樂桃航空MM 926班機，從台北(TPE)飛往那霸機場(OKA)。請記得將手錶調快一小時。</p>
+        <h4>17:20 - 18:30：入境與取車</h4>
+        <p>完成入境手續後，前往租車櫃檯辦理手續。多數租車公司會提供接駁車將您送至機場外的取車中心 [17, 2]。</p>
+        <h4>18:30 - 20:30：向北方的景觀公路之旅</h4>
+        <p>從機場開車至「Orion本部度假SPA飯店」約需90-120分鐘。沿沖繩自動車道北上，從「許田IC」下交流道。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Naha+Airport,+Okinawa&destination=The+Orion+Hotel+Motobu+Resort+%26+Spa,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (機場 → Orion飯店)</a>
+        <h4>20:30起：入住與家庭晚餐</h4>
+        <p><strong>入住：</strong> <strong>Orion本部度假SPA飯店</strong> (地址：沖縄県国頭郡本部町備瀬148-1) 。</p>
+        <div class="tip">
+            <strong>親子小提示：</strong> 經過一天的舟車勞頓，直接在飯店內的餐廳享用晚餐是最輕鬆的選擇。您的飯店擁有多個泳池，包括兒童戲水池，是讓孩子們放鬆的好地方 。
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 沖繩家庭冒險行程規劃。祝您旅途愉快！</p>
-    </footer>
+    <div class="day-plan">
+        <h3>第二天：8月11日 (一) - 海洋奇觀與古徑探險</h3>
+        <h4>上午 (9:00 - 13:00)：沖繩美麗海水族館</h4>
+        <p>您的飯店距離世界級的<strong>沖繩美麗海水族館</strong>僅幾步之遙 [18, 19]。這裡的「黑潮之海」巨大水槽，有雄偉的鯨鯊和鬼蝠魟，絕對會讓孩子們驚嘆不已。別錯過戶外免費的海豚秀 (Okichan劇場) [5, 7]。</p>
+        <h4>午餐 (13:00 - 14:30)：品嚐道地沖繩麵</h4>
+        <p>推薦前往附近的<strong>山原そば (Yanbaru Soba)</strong>，這家店以家傳秘方湯頭聞名，並提供適合小朋友的「兒童麵 (Kids Soba)」 [20, 21]。店內有榻榻米座位，對有幼兒的家庭相當友善 [20]。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=The+Orion+Hotel+Motobu+Resort+%26+Spa,+Okinawa&destination=Yanbaru+Soba,+Izumi,+Motobu,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Orion飯店 → 山原そば)</a>
+        <h4>下午 (14:30 - 17:00)：備瀨福木林道探險</h4>
+        <p>緊鄰飯店的<strong>備瀨福木林道</strong>是一片美麗的綠色隧道 [14, 18]。您可以選擇租借家庭自行車，或體驗有趣的<span class="highlight">水牛車之旅</span> [14, 18]，用緩慢的步調感受沖繩的傳統鄉村風情，孩子們肯定會喜歡。</p>
+        <h4>傍晚 (18:00起)：夕陽下的家庭晚餐</h4>
+        <p>可以考慮前往山頂的<strong>花人逢 (Kajinho Pizza)</strong>，這裡的披薩和無敵海景非常受歡迎 [5]。但因時常需要排隊，若孩子較無耐心，也可選擇其他歡迎兒童的餐廳，例如提供阿古豬涮涮鍋的 <strong>Agu Buta Shabushabu Senmon Ten Ocean Boo!</strong> [22]。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=The+Orion+Hotel+Motobu+Resort+%26+Spa,+Okinawa&destination=Kajinho+Pizza,+Motobu,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Orion飯店 → 花人逢)</a>
+    </div>
 
-    <script>
-        /**
-         * 計算並在地圖上顯示路線的輔助函數
-         * @param {google.maps.DirectionsService} directionsService - Directions Service 實例
-         * @param {string} mapId - 地圖容器的 DOM ID
-         * @param {object} routeData - 包含起點、終點和中途點的路線資料
-         */
-        function createMapWithRoute(directionsService, mapId, routeData) {
-            const mapElement = document.getElementById(mapId);
-            if (!mapElement) {
-                console.error(`Map container with id "${mapId}" not found.`);
-                return;
-            }
+    <div class="day-plan">
+        <h3>第三天：8月12日 (二) - 古城遺跡與鳳梨樂園</h3>
+        <h4>上午 (至11:00)：飯店時光與退房</h4>
+        <p>在Orion飯店享受最後的早餐與泳池時光，於11:00前辦理退房。</p>
+        <h4>11:00 - 14:00：探訪今歸仁城跡</h4>
+        <p>驅車約15-20分鐘，前往被列為世界遺產的<strong>今歸仁城跡</strong> [5, 7, 14]。帶孩子們在廣闊的城牆上奔跑，眺望壯麗海景，想像古代琉球王國的故事，是一堂生動的戶外歷史課。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=The+Orion+Hotel+Motobu+Resort+%26+Spa,+Okinawa&destination=Nakijin+Castle+Ruins,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Orion飯店 → 今歸仁城跡)</a>
+        <h4>14:00 - 15:00：名護市午餐與前往住宿</h4>
+        <p>在前往下一間住宿的路上，於名護市區用餐。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Nakijin+Castle+Ruins,+Okinawa&destination=Lieta+Nakayama,+Nago,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (今歸仁城跡 → Lieta Nakayama)</a>
+        <h4>15:00起：入住與主題公園同樂</h4>
+        <p><strong>入住：</strong> <strong>Lieta Nakayama</strong> (地址：沖縄県名護市為又1220-25-5) [23, 11]。這是一間小巧的民宿，請注意，接待兒童可能會有額外費用，建議事先確認 [24]。</p>
+        <p>下午是孩子們的快樂時光！您的住宿點非常靠近幾個主題公園：</p>
+        <ul>
+            <li><strong>名護鳳梨公園：</strong> 搭乘可愛的鳳梨造型遊園車，穿梭在鳳梨田中，還能品嚐各種鳳梨製品 [25, 14, 15]。</li>
+            <li><strong>OKINAWA水果樂園：</strong> 就在住宿隔壁，可以認識各種熱帶水果，並與彩色鸚鵡互動 [15]。</li>
+            <li><strong>DINO恐龍公園：</strong> 進入山原亞熱帶森林，與超過80隻逼真的恐龍模型相遇，絕對是小恐龍迷的最愛 [25, 15]。</li>
+        </ul>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Lieta+Nakayama,+Nago,+Okinawa&destination=Nago+Pineapple+Park,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Lieta Nakayama → 鳳梨公園)</a>
+        <h4>傍晚：名護家庭式燒肉晚餐</h4>
+        <p>晚餐推薦位於為又地區的<strong>焼肉五苑 (Yakiniku Goen)</strong> [13]。這裡提供自助餐形式，選擇多樣，氣氛輕鬆，非常適合家庭用餐。評論中也提到店家對帶小孩的家庭很友善 [13]。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Lieta+Nakayama,+Nago,+Okinawa&destination=Yakiniku+Goen,+Nago,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Lieta Nakayama → 焼肉五苑)</a>
+    </div>
 
-            const map = new google.maps.Map(mapElement, {
-                zoom: 9,
-                center: { lat: 26.5, lng: 127.9 }, // Default center for Okinawa
-                mapTypeControl: false,
-                streetViewControl: false,
-            });
+    <div class="day-plan">
+        <h3>第四天：8月13日 (三) - 從北部綠意到那霸心跳</h3>
+        <h4>上午 (至10:00)：退房與南下</h4>
+        <p>於10:00前從Lieta Nakayama退房。若時間充裕，可考慮參觀<strong>Orion歡樂公園</strong>（啤酒工廠），導覽結束後大人可試飲啤酒，小朋友則有提供無酒精飲料 [7, 14, 15]。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Lieta+Nakayama,+Nago,+Okinawa&destination=Orion+Happy+Park,+Nago,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Lieta Nakayama → Orion歡樂公園)</a>
+        <h4>11:30 - 14:00：返回那霸並歸還車輛</h4>
+        <p>從名護開車返回那霸市區（約70-90分鐘），並前往租車公司指定地點還車（建議選擇那霸市中心，如縣廳前站附近）。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Orion+Happy+Park,+Nago,+Okinawa&destination=Prefectural+Office+Station,+Naha,+Okinawa&travelmode=driving" target="_blank" class="map-link">🗺️ 取得路線規劃 (Orion歡樂公園 → 那霸縣廳前站)</a>
+        <h4>14:00 - 15:00：前往飯店</h4>
+        <p>從還車點搭乘計程車或單軌電車至飯店。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Prefectural+Office+Station,+Naha,+Okinawa&destination=Novotel+Okinawa+Naha&travelmode=transit" target="_blank" class="map-link">🗺️ 取得路線規劃 (縣廳前站 → Novotel飯店)</a>
+        <h4>15:00起：入住與那霸初探</h4>
+        <p><strong>入住：</strong> <strong>那霸諾富特酒店 (Novotel Okinawa Naha)</strong> (地址：沖縄県那覇市松川40) [26, 27]。</p>
+        <div class="tip">
+            <strong>親子小提示：</strong> Novotel飯店同樣設有兒童泳池和可欣賞市景的無邊際泳池，是安頓下來後讓孩子們玩水的好去處 [27]。
+        </div>
+        <p>稍作休息後，搭乘單軌電車或計程車前往那霸最熱鬧的<strong>國際通</strong> [5, 21, 28]。這裡商店林立，從伴手禮、零食到動漫商品應有盡有，絕對能逛上許久。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Novotel+Okinawa+Naha&destination=Kokusai+Street,+Naha,+Okinawa&travelmode=transit" target="_blank" class="map-link">🗺️ 取得路線規劃 (Novotel飯店 → 國際通)</a>
+        <h4>傍晚：國際通晚餐</h4>
+        <p>國際通上有非常多樣的餐飲選擇。推薦<strong>Shima Shabushabu NAKAMA</strong>，這裡不僅能品嚐到阿古豬與石垣牛，每晚還有免費的沖繩民謠現場表演，氣氛熱鬧，能讓全家大小都感受到沖繩的熱情 [29]。</p>
+    </div>
 
-            const directionsRenderer = new google.maps.DirectionsRenderer({
-                map: map,
-                suppressMarkers: false,
-                polylineOptions: {
-                    strokeColor: '#FF6347', // Accent color
-                    strokeWeight: 6,
-                    strokeOpacity: 0.8
-                }
-            });
+    <div class="day-plan">
+        <h3>第五天：8月14日 (四) - 皇城巡禮與滿載而歸</h3>
+        <h4>上午 (至11:00)：首里城巡禮與退房</h4>
+        <p>於11:00前退房，可將行李寄存在飯店。您的飯店距離<strong>首里城</strong>非常近 [4, 27]。帶孩子們走進這座曾是琉球王國的宮殿，探索宏偉的城門與庭園，感受歷史的氣息 [5, 21, 28]。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Novotel+Okinawa+Naha&destination=Shuri+Castle,+Naha,+Okinawa&travelmode=transit" target="_blank" class="map-link">🗺️ 取得路線規劃 (Novotel飯店 → 首里城)</a>
+        <h4>11:00 - 14:00：壺屋陶器街尋寶與最後的午餐</h4>
+        <p>搭乘單軌電車至牧志站，步行至<strong>壺屋陶器街</strong> [21]。這裡有許多販售沖繩傳統陶瓷(Yachimun)的店家，可以尋找可愛的風獅爺(Shisa)雕像作為獨特的紀念品。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Shuri+Castle,+Naha,+Okinawa&destination=Tsuboya+Pottery+District,+Naha,+Okinawa&travelmode=transit" target="_blank" class="map-link">🗺️ 取得路線規劃 (首里城 → 壺屋陶器街)</a>
+        <h4>14:00 - 15:00：取行李，前往機場</h4>
+        <p>返回飯店領取行李，然後搭乘Yui單軌電車直達那霸機場站 。</p>
+        <a href="https://www.google.com/maps/dir/?api=1&origin=Novotel+Okinawa+Naha&destination=Naha+Airport,+Okinawa&travelmode=transit" target="_blank" class="map-link">🗺️ 取得路線規劃 (Novotel飯店 → 機場)</a>
+        <h4>15:00 - 16:45：機場報到與告別</h4>
+        <p>準備搭乘16:45起飛的樂桃航空MM 929班機，預計17:20抵達台北(TPE)，結束愉快的沖繩家庭之旅。</p>
+    </div>
 
-            directionsService
-                .route({
-                    origin: routeData.origin,
-                    destination: routeData.destination,
-                    waypoints: routeData.waypoints || '',
-                    optimizeWaypoints: true,
-                    travelMode: google.maps.TravelMode.DRIVING,
-                })
-                .then((response) => {
-                    directionsRenderer.setDirections(response);
-                })
-                .catch((e) => {
-                    mapElement.innerHTML = `<p style="text-align:center; padding: 20px;">無法規劃地圖路線。請確認您的API金鑰是否有效且已啟用Directions API。</p>`;
-                    console.error("Directions request failed: " + e);
-                });
-        }
+    <h2>第三部分：家庭美食精選推薦</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>餐廳名稱</th>
+                <th>區域</th>
+                <th>特色料理</th>
+                <th>親子友善亮點</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>山原そば (Yanbaru Soba)</strong> [20, 21]</td>
+                <td>本部町</td>
+                <td>沖繩麵</td>
+                <td>提供兒童麵，有榻榻米座位，口味傳統道地。</td>
+            </tr>
+            <tr>
+                <td><strong>花人逢 (Kajinho Pizza)</strong> [5]</td>
+                <td>本部町</td>
+                <td>窯烤披薩</td>
+                <td>孩子們喜歡的披薩，視野開闊，但需有排隊心理準備。</td>
+            </tr>
+            <tr>
+                <td><strong>焼肉五苑 (Yakiniku Goen)</strong> [13]</td>
+                <td>名護市</td>
+                <td>日式燒肉</td>
+                <td>自助餐形式選擇多，價格實惠，氣氛輕鬆適合家庭。</td>
+            </tr>
+            <tr>
+                <td><strong>Shima Shabushabu NAKAMA</strong> [29]</td>
+                <td>那霸市</td>
+                <td>阿古豬涮涮鍋</td>
+                <td>有免費的沖繩民謠現場表演，氣氛歡樂。</td>
+            </tr>
+            <tr>
+                <td><strong>Taste of Okinawa</strong> [29, 30, 31]</td>
+                <td>那霸市</td>
+                <td>精釀啤酒/創意料理</td>
+                <td>氣氛休閒，提供使用在地食材的創意料理，適合想嚐鮮的家庭。</td>
+            </tr>
+        </tbody>
+    </table>
 
-        /**
-         * Google Maps API 載入後執行的主要函數
-         */
-        function initMap() {
-            const directionsService = new google.maps.DirectionsService();
+    <hr>
+    <p style="text-align:center; font-style:italic;">祝您與您的家人有一趟充滿陽光、歡笑與美好回憶的沖繩之旅！</p>
 
-            // Day 2: 南部 -> 北部
-            createMapWithRoute(directionsService, 'map-day2', {
-                origin: '琉球温泉 瀬長島ホテル',
-                destination: 'ホテル オリオン モトブ リゾート＆スパ',
-                waypoints: [
-                    { location: '沖縄美ら海水族館', stopover: true },
-                    { location: '古宇利オーシャンタワー', stopover: true }
-                ]
-            });
-
-            // Day 3: 北部區域 (修正後的路徑)
-            createMapWithRoute(directionsService, 'map-day3', {
-                origin: 'ホテル オリオン モトブ リゾート＆スパ',
-                destination: 'ホテル オリオン モトブ リゾート＆スパ',
-                waypoints:[]
-                });
-
-            // Day 4: 北部 -> 南部
-            createMapWithRoute(directionsService, 'map-day4', {
-                origin: 'ホテル オリオン モトブ リゾート＆スパ',
-                destination: '琉球温泉 瀬長島ホテル',
-                waypoints: [
-                    { location: 'おきなわワールド', stopover: true }
-                ]
-            });
-
-            // Day 5: 南部區域 -> 機場
-            createMapWithRoute(directionsService, 'map-day5', {
-                origin: '琉球温泉 瀬長島ホテル',
-                destination: '那覇空港',
-                waypoints: [
-                    { location: '浦添大公園', stopover: true }
-                ]
-            });
-        }
-
-        // 將 initMap 函數設為全域變數，以便 Google Maps API 回呼
-        window.initMap = initMap;
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeJyE2p2d192EUPGuOZKY3tUDvc8w-jeY&callback=initMap&libraries=places"></script>
+</div>
 
 </body>
 </html>
